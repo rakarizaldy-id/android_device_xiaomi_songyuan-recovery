@@ -1,19 +1,10 @@
-# Private OEM payload never committed. Device-specific source RC/XML IS allowed.
-prebuilt/
-recovery/root/vendor/bin/
-recovery/root/vendor/lib/
-recovery/root/vendor/lib64/
-recovery/root/vendor/firmware/
-recovery/root/odm/bin/
-recovery/root/odm/lib/
-recovery/root/odm/lib64/
-recovery/root/odm/firmware/
-recovery/root/vendor_dlkm/lib/
+# Native POCO F9 Ultra device tree; verified ID305 prebuilts must be tracked.
+# Do not ignore: prebuilt/kernel, prebuilt/vendor, prebuilt/odm, prebuilt/vendor_dlkm.
 out/
-*.img
+out-*/
+.repo/
+*.log
+*.trace
+*.tar.gz
+*.zip
 *.elf
-*.so
-*.ko
-*.bin
-*.tar*
-curated-manifest.json

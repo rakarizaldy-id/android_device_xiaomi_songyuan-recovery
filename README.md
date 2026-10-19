@@ -1,45 +1,28 @@
 # POCO F9 Ultra (songyuan)
 
-Android 16 recovery device configuration for **POCO F9 Ultra**, codename `songyuan`.
+Native Android 16 recovery device tree for POCO F9 Ultra, Qualcomm SM8850 (canoe).
 
-## Device information
-
-| Property | Value |
+| Item | Source |
 |---|---|
 | Device | POCO F9 Ultra |
-| Codename | `songyuan` |
-| SoC | Qualcomm Snapdragon 8 Elite Gen 5 (SM8850) |
-| Platform | `canoe` |
-| Android version | 16 |
-| Firmware reference | `OS3.0.305.0.WGNIDXM` |
-| Recovery | TWRP 16 |
+| Codename | songyuan |
+| OS reference | OS3.0.305.0.WGNIDXM (Indonesia, Android 16) |
+| Recovery partition | 100 MiB |
+| Source binary provenance | Original extracted device firmware, SHA-256 verified |
 
-## Repository layout
+## Directory layout
+- 'prebuilt/kernel': original firmware kernel.
+- 'prebuilt/vendor/', 'prebuilt/odm/': original vendor/ODM security services, firmware, and required libraries.
+- 'prebuilt/vendor_dlkm/': original kernel module closure and metadata.
+- 'prebuilt/curated-manifest.json': SHA-256 and byte count of every OEM payload.
+- 'recovery/root/': device-specific recovery init services and touchscreen bootstrap.
+- 'device.mk': installs device-owned init and verified OEM prebuilts into the recovery ramdisk.
+- 'BoardConfig.mk': partition geometry, filesystem and TWRP16 configuration.
 
-```text
-.
-├── Android.bp
-├── Android.mk
-├── AndroidProducts.mk
-├── BoardConfig.mk
-├── device.mk
-├── twrp_songyuan.mk
-├── recovery.fstab
-├── system.prop
-├── compat/
-└── recovery/root/
-    ├── init.recovery.qcom.rc
-    ├── system/
-    ├── vendor/
-    └── odm/
-```
+## Current status
+Firmware assets and repository source are assembled and checksum verified. This is **NOT evidence of a successful recovery build, boot, touchscreen operation, USB behavior, or decryption**.
 
-## Configuration
+A full TWRP16 recovery build, generated image size check against the 100 MiB partition, same-build ELF ABI/linker checks, and physical device tests are still required.
 
-The device configuration includes recovery partition settings, filesystem definitions, startup services, hardware initialization, and Android 16 recovery properties.
-
-The recovery filesystem configuration targets the reference firmware's EROFS logical partitions and F2FS userdata/metadata layout.
-
-## Status
-
-Work in progress. Boot, touch, USB, and encrypted-data compatibility require verification on the device.
+## Build safety
+All vendor binaries here originate from the specified Songyuan firmware. Source checks should fail if the manifest is missing or hashes differ. No images, kernels, firmware or executables from other devices are included.

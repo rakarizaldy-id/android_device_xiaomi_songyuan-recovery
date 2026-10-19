@@ -1,0 +1,10 @@
+# Keep authored source scripts consistent on Windows and Linux.
+*.mk text eol=lf
+*.rc text eol=lf
+*.sh text eol=lf
+*.js text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+.gitattributes text eol=lf
+# LAST rule wins: preserve all stock ID305 OEM payload bytes unmodified.
+prebuilt/** -text

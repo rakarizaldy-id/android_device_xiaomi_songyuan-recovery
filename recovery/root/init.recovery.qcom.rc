@@ -1,4 +1,4 @@
-# Recovery init: POCO F9 Ultra ID305 OEM; source-only, not a runtime claim.
+# Recovery init: POCO F9 Ultra original ID305; not yet runtime tested.
 # No donor ADSP helper/SSR. Never rewrite vendor Binder strings.
 on init
     setprop sys.usb.configfs 1
@@ -40,7 +40,7 @@ on property:init.svc.vendor.qseecomd=running
 on property:vendor.sys.listeners.registered=true && property:init.svc.vendor.minkdaemon=running
     start vendor.secure_element
     # Official TWRP16 external/se_omapi owns the sole init.rc/service.
-    # It starts on late-init, as in EkinStrop Nezha; do not duplicate its RC.
+    # It starts on late-init; do not duplicate the upstream service definition.
     start miweaver_hal_service
 
 on property:init.svc.miweaver_hal_service=running && property:vendor.sys.listeners.registered=true

@@ -1,0 +1,1484 @@
+{
+  "device": "songyuan",
+  "source_firmware": "OS3.0.305.0.WGNIDXM",
+  "kind": "unverified_curated_recovery_overlay",
+  "kernel_included": true,
+  "primary_services": [
+    "vendor/bin/qseecomd",
+    "vendor/bin/hlosminkdaemon",
+    "vendor/bin/hw/android.hardware.security.onekeymint-service-qti",
+    "vendor/bin/hw/android.hardware.gatekeeper-rust-service-qti",
+    "vendor/bin/hw/android.hardware.secure_element-service.qti",
+    "odm/bin/hw/android.hardware.weaver-service.thales",
+    "odm/bin/hw/android.hardware.security.keymint-service.strongbox-thales",
+    "odm/bin/hw/android.hardware.nfc-service-st",
+    "odm/bin/hw/vendor.xiaomi.hardware.authsecretd"
+  ],
+  "board_modules": [
+    "qmi_helpers.ko",
+    "qcom_glink.ko",
+    "qcom_glink_smem.ko",
+    "qcom_smd.ko",
+    "rproc_qcom_common.ko",
+    "qcom_pdr_msg.ko",
+    "pdr_interface.ko",
+    "qcom_sysmon.ko",
+    "qcom_q6v5.ko",
+    "qcom_ramdump.ko",
+    "qcom_va_minidump.ko",
+    "qcom_pil_info.ko",
+    "qcom_q6v5_pas.ko",
+    "q6_pdr_dlkm.ko",
+    "q6_notifier_dlkm.ko",
+    "snd_event_dlkm.ko",
+    "gpr_dlkm.ko",
+    "spf_core_dlkm.ko",
+    "adsp_loader_dlkm.ko",
+    "q6_dlkm.ko",
+    "pcie-pdc.ko",
+    "pci-msm-drv.ko",
+    "mhi.ko",
+    "wcd_usbss_i2c.ko",
+    "usb_f_gsi.ko",
+    "dwc3-msm.ko",
+    "repeater.ko",
+    "redriver.ko",
+    "ipam.ko",
+    "gsim.ko",
+    "rmnet_mem.ko",
+    "smem-mailbox.ko",
+    "cfg80211.ko",
+    "mac80211.ko",
+    "wlan_firmware_service.ko",
+    "cnss_prealloc.ko",
+    "cnss_utils.ko",
+    "cnss_nl.ko",
+    "cnss_plat_ipc_qmi_svc.ko",
+    "cnss2.ko",
+    "qca_cld3_peach_v2.ko",
+    "qca_cld3_wcn7750.ko",
+    "qti_pmic_glink.ko",
+    "qti_battery_charger.ko",
+    "panel_event_notifier.ko",
+    "gh_irq_lend.ko",
+    "xiaomi_touch.ko",
+    "focaltech_touch_3685g_1.ko",
+    "swr_dlkm.ko",
+    "mca_sysfs.ko",
+    "mca_event.ko",
+    "mca_log.ko",
+    "mca_parse_dts.ko",
+    "mca_charge_mievent.ko",
+    "mca_protocol_class.ko",
+    "mca_protocol_qc_class.ko",
+    "mca_platform_bc12_class.ko",
+    "mca_platform_buckchg_class.ko",
+    "mca_strategy_class.ko",
+    "mca_adsp_glink.ko",
+    "mca_qcom_subpmic_proxy.ko",
+    "leds-qcom-flash.ko",
+    "leds-qpnp-vibrator-ldo.ko",
+    "qcom-hv-haptics.ko",
+    "swr_haptics_dlkm.ko",
+    "smcinvoke_dlkm.ko",
+    "qsee_ipc_irq_bridge.ko",
+    "stm_st54se_gpio.ko",
+    "stm_nfc_i2c.ko"
+  ],
+  "module_closure": [
+    "qmi_helpers.ko",
+    "qcom_glink.ko",
+    "qcom_glink_smem.ko",
+    "qcom_smd.ko",
+    "rproc_qcom_common.ko",
+    "qcom_pdr_msg.ko",
+    "pdr_interface.ko",
+    "qcom_sysmon.ko",
+    "qcom_q6v5.ko",
+    "qcom_ramdump.ko",
+    "qcom_va_minidump.ko",
+    "qcom_pil_info.ko",
+    "qcom_q6v5_pas.ko",
+    "q6_pdr_dlkm.ko",
+    "q6_notifier_dlkm.ko",
+    "snd_event_dlkm.ko",
+    "gpr_dlkm.ko",
+    "spf_core_dlkm.ko",
+    "adsp_loader_dlkm.ko",
+    "q6_dlkm.ko",
+    "pcie-pdc.ko",
+    "pci-msm-drv.ko",
+    "mhi.ko",
+    "wcd_usbss_i2c.ko",
+    "repeater.ko",
+    "redriver.ko",
+    "mca_sysfs.ko",
+    "dwc3-msm.ko",
+    "usb_f_gsi.ko",
+    "rmnet_mem.ko",
+    "gsim.ko",
+    "ipam.ko",
+    "smem-mailbox.ko",
+    "cfg80211.ko",
+    "mac80211.ko",
+    "wlan_firmware_service.ko",
+    "cnss_prealloc.ko",
+    "cnss_utils.ko",
+    "cnss_nl.ko",
+    "cnss_plat_ipc_qmi_svc.ko",
+    "cnss2.ko",
+    "qca_cld3_peach_v2.ko",
+    "icnss2.ko",
+    "qca_cld3_wcn7750.ko",
+    "qti_pmic_glink.ko",
+    "panel_event_notifier.ko",
+    "qti_battery_charger.ko",
+    "gh_irq_lend.ko",
+    "xiaomi_touch.ko",
+    "focaltech_touch_3685g_1.ko",
+    "swr_dlkm.ko",
+    "mca_event.ko",
+    "mca_log.ko",
+    "mca_parse_dts.ko",
+    "mca_charge_mievent.ko",
+    "mca_protocol_class.ko",
+    "mca_protocol_qc_class.ko",
+    "mca_protocol_pd_class.ko",
+    "mca_platform_bc12_class.ko",
+    "mca_platform_buckchg_class.ko",
+    "mca_strategy_class.ko",
+    "mca_adsp_glink.ko",
+    "mca_platform_cp_class.ko",
+    "mca_platform_wireless_class.ko",
+    "mca_qcom_subpmic_proxy.ko",
+    "leds-qcom-flash.ko",
+    "leds-qpnp-vibrator-ldo.ko",
+    "qcom-hv-haptics.ko",
+    "swr_haptics_dlkm.ko",
+    "smcinvoke_dlkm.ko",
+    "qsee_ipc_irq_bridge.ko",
+    "stm_st54se_gpio.ko",
+    "stm_nfc_i2c.ko"
+  ],
+  "module_count": 73,
+  "system_runtime_names_require_abi_check": [
+    "libapexsupport.so",
+    "libbinder_ndk.so",
+    "libc.so",
+    "libdl.so",
+    "liblog.so",
+    "libm.so",
+    "libvndksupport.so"
+  ],
+  "elf_dependencies": {
+    "vendor/bin/qseecomd": [
+      "libcutils.so",
+      "libutils.so",
+      "liblog.so",
+      "libQSEEComAPI.so",
+      "libdrmfs.so",
+      "libminkdescriptor.so",
+      "libdmabufheap.so",
+      "libion.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/bin/hlosminkdaemon": [
+      "liblog.so",
+      "libutils.so",
+      "libcutils.so",
+      "libcrypto.so",
+      "libminksocket_vendor.so",
+      "libminkdescriptor.so",
+      "libqcbor.so",
+      "libqrtr.so",
+      "libjsoncpp.so",
+      "libqmi_common_so.so",
+      "libqmi_csi.so",
+      "libqmi_cci.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/bin/hw/android.hardware.security.onekeymint-service-qti": [
+      "liblog.so",
+      "libbinder_ndk.so",
+      "libc.so",
+      "libminkdescriptor.so"
+    ],
+    "vendor/bin/hw/android.hardware.gatekeeper-rust-service-qti": [
+      "libbinder_ndk.so",
+      "liblog.so",
+      "libminkdescriptor.so",
+      "libc.so"
+    ],
+    "vendor/bin/hw/android.hardware.secure_element-service.qti": [
+      "libQSEEComAPI.so",
+      "libEseUtils.so",
+      "libGPQeSE.so",
+      "libbase.so",
+      "libcutils.so",
+      "liblog.so",
+      "libutils.so",
+      "libbinder_ndk.so",
+      "android.hardware.secure_element-V1-ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/bin/hw/android.hardware.weaver-service.thales": [
+      "android.hardware.weaver-V2-ndk.so",
+      "ese_weaver_thales.so",
+      "libbase.so",
+      "liblog.so",
+      "libbinder_ndk.so",
+      "vendor.xiaomi.hardware.miauthsecretd-V1-ndk.so",
+      "libcutils.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/bin/hw/android.hardware.security.keymint-service.strongbox-thales": [
+      "android.hardware.security.keymint-V3-ndk.so",
+      "android.hardware.security.rkp-V3-ndk.so",
+      "android.hardware.security.sharedsecret-V1-ndk.so",
+      "lib_android_keymaster_keymint_utils_V3.so",
+      "libbase.so",
+      "libbinder_ndk.so",
+      "libcppbor_external.so",
+      "libcrypto.so",
+      "libkeymaster_portable.so",
+      "libjc_keymint-thales.so",
+      "libjc_keymint_transport-thales.so",
+      "liblog.so",
+      "libutils.so",
+      "android.se.omapi-V1-ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/bin/hw/android.hardware.nfc-service-st": [
+      "libbase.so",
+      "libcutils.so",
+      "liblog.so",
+      "libutils.so",
+      "libbinder_ndk.so",
+      "nfc_nci.st21nfc.st.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/bin/hw/vendor.xiaomi.hardware.authsecretd": [
+      "vendor.xiaomi.hardware.miauthsecretd-V1-ndk.so",
+      "libbase.so",
+      "liblog.so",
+      "libbinder_ndk.so",
+      "libmisight.so",
+      "libcutils.so",
+      "vendor.xiaomi.hardware.oldcredential-V1-ndk.so",
+      "libGPTEE_vendor.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libcutils.so": [
+      "liblog.so",
+      "libbase.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libutils.so": [
+      "libcutils.so",
+      "liblog.so",
+      "libvndksupport.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libQSEEComAPI.so": [
+      "liblog.so",
+      "libutils.so",
+      "libdmabufheap.so",
+      "libqcbor.so",
+      "libminkdescriptor.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libdrmfs.so": [
+      "libutils.so",
+      "libcutils.so",
+      "libdiag.so",
+      "liblog.so",
+      "libQSEEComAPI.so",
+      "libxml2.so",
+      "libseclog.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libminkdescriptor.so": [
+      "liblog.so",
+      "libutils.so",
+      "libqcbor.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libdmabufheap.so": [
+      "liblog.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libion.so": [
+      "liblog.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libc++.so": [
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libcrypto.so": [
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libminksocket_vendor.so": [
+      "libcutils.so",
+      "liblog.so",
+      "libqrtr.so",
+      "libvmmem.so",
+      "libdmabufheap.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libqcbor.so": [
+      "liblog.so",
+      "libutils.so",
+      "libcutils.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libqrtr.so": [
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libjsoncpp.so": [
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libqmi_common_so.so": [
+      "libcutils.so",
+      "libutils.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libqmi_csi.so": [
+      "libcutils.so",
+      "libutils.so",
+      "libqmi_encdec.so",
+      "liblog.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libqmi_cci.so": [
+      "libcutils.so",
+      "libutils.so",
+      "libqmi_encdec.so",
+      "liblog.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/hw/libEseUtils.so": [
+      "liblog.so",
+      "libutils.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libGPQeSE.so": [
+      "libhidlbase.so",
+      "libutils.so",
+      "liblog.so",
+      "libhardware.so",
+      "libbase.so",
+      "libcutils.so",
+      "libhwbinder.so",
+      "libcrypto.so",
+      "vendor.xiaomi.hardware.aidl.mtdservice-V1-ndk.so",
+      "android.hardware.secure_element@1.0.so",
+      "libGPTEE_vendor.so",
+      "libQSEEComAPI.so",
+      "libEseUtils.so",
+      "libstnfc-streset.so",
+      "libbinder_ndk.so",
+      "libmisight.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libbase.so": [
+      "liblog.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.hardware.secure_element-V1-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.hardware.weaver-V2-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/lib64/ese_weaver_thales.so": [
+      "android.se.omapi-V1-ndk.so",
+      "android.hardware.secure_element-V1-ndk.so",
+      "libcutils.so",
+      "libjc_weaver_transport.so",
+      "libhardware.so",
+      "libhidlbase.so",
+      "libutils.so",
+      "liblog.so",
+      "libbinder_ndk.so",
+      "libmisight.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/lib64/vendor.xiaomi.hardware.miauthsecretd-V1-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.hardware.security.keymint-V3-ndk.so": [
+      "libbinder_ndk.so",
+      "android.hardware.security.secureclock-V1-ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.hardware.security.rkp-V3-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.hardware.security.sharedsecret-V1-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/lib_android_keymaster_keymint_utils_V3.so": [
+      "android.hardware.security.keymint-V3-ndk.so",
+      "libbase.so",
+      "libhardware.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libcppbor_external.so": [
+      "libbase.so",
+      "libcrypto.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libkeymaster_portable.so": [
+      "libcrypto.so",
+      "libcppbor.so",
+      "libcppcose_rkp.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/lib64/libjc_keymint-thales.so": [
+      "android.hardware.security.keymint-V3-ndk.so",
+      "android.hardware.security.rkp-V3-ndk.so",
+      "android.hardware.security.secureclock-V1-ndk.so",
+      "android.hardware.security.sharedsecret-V1-ndk.so",
+      "lib_android_keymaster_keymint_utils_V3.so",
+      "libbase.so",
+      "libcppbor_external.so",
+      "libkeymaster_portable.so",
+      "libkeymaster_messages.so",
+      "libsoft_attestation_cert.so",
+      "liblog.so",
+      "libcrypto.so",
+      "libcutils.so",
+      "libjc_keymint_transport-thales.so",
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/lib64/libjc_keymint_transport-thales.so": [
+      "libbinder.so",
+      "libbase.so",
+      "liblog.so",
+      "libbinder_ndk.so",
+      "android.se.omapi-V1-ndk.so",
+      "libhardware.so",
+      "libhardware_legacy.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.se.omapi-V1-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/lib64/nfc_nci.st21nfc.st.so": [
+      "libbase.so",
+      "libcutils.so",
+      "libhardware.so",
+      "libhardware_legacy.so",
+      "libhidlbase.so",
+      "liblog.so",
+      "libutils.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libmisight.so": [
+      "liblog.so",
+      "libcutils.so",
+      "libutils.so",
+      "libjsoncpp.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/vendor.xiaomi.hardware.oldcredential-V1-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libGPTEE_vendor.so": [
+      "libc.so",
+      "libutils.so",
+      "liblog.so",
+      "libc++.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libdiag.so": [
+      "liblog.so",
+      "libc.so",
+      "libcutils.so",
+      "libc++.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libxml2.so": [
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libseclog.so": [
+      "liblog.so",
+      "libutils.so",
+      "libcutils.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libvmmem.so": [
+      "liblog.so",
+      "libbase.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libqmi_encdec.so": [
+      "libcutils.so",
+      "libutils.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libhidlbase.so": [
+      "libbase.so",
+      "liblog.so",
+      "libutils.so",
+      "libcutils.so",
+      "libvndksupport.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libhardware.so": [
+      "libcutils.so",
+      "liblog.so",
+      "libvndksupport.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libhwbinder.so": [
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/vendor.xiaomi.hardware.aidl.mtdservice-V1-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.hardware.secure_element@1.0.so": [
+      "libhidlbase.so",
+      "liblog.so",
+      "libutils.so",
+      "libcutils.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libstnfc-streset.so": [
+      "liblog.so",
+      "libbinder.so",
+      "libcutils.so",
+      "libbinder_ndk.so",
+      "android.hardware.nfc-V1-ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "odm/lib64/libjc_weaver_transport.so": [
+      "android.hardware.secure_element-V1-ndk.so",
+      "android.se.omapi-V1-ndk.so",
+      "libbase.so",
+      "liblog.so",
+      "libcutils.so",
+      "libutils.so",
+      "libhardware.so",
+      "libhidlbase.so",
+      "libbinder_ndk.so",
+      "libbinder.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.hardware.security.secureclock-V1-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libcppbor.so": [
+      "libbase.so",
+      "libcrypto.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libcppcose_rkp.so": [
+      "libcppbor.so",
+      "libcrypto.so",
+      "liblog.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libkeymaster_messages.so": [
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libsoft_attestation_cert.so": [
+      "libkeymaster_portable.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libbinder.so": [
+      "libcutils.so",
+      "liblog.so",
+      "libutils.so",
+      "libapexsupport.so",
+      "libvndksupport.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libhardware_legacy.so": [
+      "libaconfig_storage_read_api_cc.so",
+      "libbase.so",
+      "libbinder_ndk.so",
+      "libcutils.so",
+      "libhidlbase.so",
+      "liblog.so",
+      "libutils.so",
+      "server_configurable_flags.so",
+      "android.system.suspend-V1-ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.hardware.nfc-V1-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/libaconfig_storage_read_api_cc.so": [
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/server_configurable_flags.so": [
+      "libbase.so",
+      "libcutils.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "vendor/lib64/android.system.suspend-V1-ndk.so": [
+      "libbinder_ndk.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ]
+  },
+  "files": {
+    "odm/bin/hw/android.hardware.nfc-service-st": {
+      "bytes": 86400,
+      "sha256": "0fc24cea3181a0c7f68f31cd9673aac1fa31bfcfc541d0438ac807ecf444fe26"
+    },
+    "odm/bin/hw/android.hardware.security.keymint-service.strongbox-thales": {
+      "bytes": 52392,
+      "sha256": "65c4032ad570f31e35b50643e25b0f89440f3daa36647b1917b6cad37875ed04"
+    },
+    "odm/bin/hw/android.hardware.weaver-service.thales": {
+      "bytes": 52752,
+      "sha256": "0e3ce63b091b0c46a4b12999bb900a01dc54fff6b6a068b6d6fc5e0461e7a6dd"
+    },
+    "odm/bin/hw/vendor.xiaomi.hardware.authsecretd": {
+      "bytes": 120296,
+      "sha256": "fe2e360aca9c50394f39e590883f3aaab651dc72cba451f31364184b9ceb6857"
+    },
+    "odm/etc/permissions/android.hardware.se.omapi.ese.xml": {
+      "bytes": 884,
+      "sha256": "b868b6ee85caa59dd71e9b7f8bbe93f83f076b9ad4041ab497eb8d8fa6f7f201"
+    },
+    "odm/etc/permissions/android.hardware.se.omapi.uicc.xml": {
+      "bytes": 886,
+      "sha256": "17939f6c8d3faed39c8812b84cb7e462583bbab228f15968a7aed7d425d05c45"
+    },
+    "odm/etc/vintf/manifest/android.hardware.security.keymint-service.strongbox-thales.xml": {
+      "bytes": 542,
+      "sha256": "c60f3eb777149fbf4c1fd127b93d287cdee4c1adb531fd255782d324e6ad09e9"
+    },
+    "odm/etc/vintf/manifest/android.hardware.weaver-service.thales.xml": {
+      "bytes": 314,
+      "sha256": "89de9acd89f78b4657ae02d7b28e701aec4ce7cf6b7c0b1750a93e391c9b018d"
+    },
+    "odm/etc/vintf/manifest/nfc-service-st.xml": {
+      "bytes": 409,
+      "sha256": "de063bac1b91f4498fe6ee8706e5a3760919a71ac8232410f1ac428d8e6229d9"
+    },
+    "odm/etc/vintf/manifest/vendor.xiaomi.hardware.miauthsecretd.xml": {
+      "bytes": 506,
+      "sha256": "57bf79f84c5df7014c281997e7db76b6d5a7e08acb3b7f0036a3216a9dfb4b11"
+    },
+    "odm/firmware/asic_panel.bin": {
+      "bytes": 756,
+      "sha256": "7824694743fbcd88f233d8a9f9a6b9be7222659a0333e48a42b9c66db176bd57"
+    },
+    "odm/firmware/focaltech_ts_fw_songyuan.bin": {
+      "bytes": 148352,
+      "sha256": "7a5e927deeda12ac9fe8ea0dbdd673702222ddccbc37088ffc84d7c328b85fcc"
+    },
+    "odm/firmware/paneldata_0x00000032.bin": {
+      "bytes": 192,
+      "sha256": "5c273f92dc765871b235eb4eb0248b98bc11f14fcbff58ea7e6581729adb64b6"
+    },
+    "odm/firmware/songyuan_fts_thp_config.cfg": {
+      "bytes": 21908,
+      "sha256": "ec0afcda663d96bdb8a4cfbb823025b32fa2cbdae1b52a30066d0be037a3891f"
+    },
+    "odm/lib64/ese_weaver_thales.so": {
+      "bytes": 68400,
+      "sha256": "de1d51885115c1094e8c88a6cdaf3d3a2bc5e5eeb77ee68bded94ce07c3c86d3"
+    },
+    "odm/lib64/libjc_keymint-thales.so": {
+      "bytes": 410704,
+      "sha256": "61a45c8d7ee431dfd497e2d47f9b34c78d46d6c1a2153d4ae1cd99d7056c5c58"
+    },
+    "odm/lib64/libjc_keymint_transport-thales.so": {
+      "bytes": 85704,
+      "sha256": "a7cf8dba7088ef7808e035acfecc8d0d5ddc92b53d2ba978b7a6b32676fec4d5"
+    },
+    "odm/lib64/libjc_weaver_transport.so": {
+      "bytes": 85760,
+      "sha256": "86f8e43ca0464fcf9256a9a6917869c94f216cec33087cd64b01e89e941cb164"
+    },
+    "odm/lib64/nfc_nci.st21nfc.st.so": {
+      "bytes": 283568,
+      "sha256": "82f4a17eda46d2ceaf7a98266d0a9b4104db6376995cd9f75d9b80868e3747c9"
+    },
+    "odm/lib64/vendor.xiaomi.hardware.miauthsecretd-V1-ndk.so": {
+      "bytes": 85680,
+      "sha256": "c0c2cafc0af47ee38dfd6dac988e5f4f9c56f9e1cdefa899e45498c1a7df3780"
+    },
+    "vendor/bin/hlosminkdaemon": {
+      "bytes": 220800,
+      "sha256": "d35d0c7acc606114f1c48024f4ac491ebe12eedf30c3fd68d41e92b8689a87f0"
+    },
+    "vendor/bin/hw/android.hardware.gatekeeper-rust-service-qti": {
+      "bytes": 375240,
+      "sha256": "4158209e55bdf17d941f150f5b6c47a8f92c7f32961cb696f34c8e9bece94e67"
+    },
+    "vendor/bin/hw/android.hardware.secure_element-service.qti": {
+      "bytes": 85808,
+      "sha256": "2a479de515559a336a121903b94db731e35d4d128285118f46e24e00d29661ff"
+    },
+    "vendor/bin/hw/android.hardware.security.onekeymint-service-qti": {
+      "bytes": 1424536,
+      "sha256": "df1f4330a65a96a7f673087542b8cf5eda7b3356c7bcc664ff336ad6420bfb2c"
+    },
+    "vendor/bin/qseecomd": {
+      "bytes": 85992,
+      "sha256": "c08f39f11a252692124668fe42626492cc282b2b400a40701fa586b8675941e7"
+    },
+    "vendor/etc/group": {
+      "bytes": 401,
+      "sha256": "a947608d0b5908a78877e4596f6526d37a2a6f2f82c7369751808c5889f8738d"
+    },
+    "vendor/etc/passwd": {
+      "bytes": 656,
+      "sha256": "2279d67b02cf2b7ed7d5e774edb606b1aefac0c6cd5fe9f1047d0c1d99331db3"
+    },
+    "vendor/etc/permissions/android.hardware.se.omapi.ese.xml": {
+      "bytes": 884,
+      "sha256": "b868b6ee85caa59dd71e9b7f8bbe93f83f076b9ad4041ab497eb8d8fa6f7f201"
+    },
+    "vendor/etc/permissions/android.hardware.se.omapi.uicc.xml": {
+      "bytes": 886,
+      "sha256": "17939f6c8d3faed39c8812b84cb7e462583bbab228f15968a7aed7d425d05c45"
+    },
+    "vendor/etc/ssg/ta_config.json": {
+      "bytes": 1221,
+      "sha256": "edc9bd9ac85b9cfa69607873824166173078a5da96e11e7b3ce452261b6d339d"
+    },
+    "vendor/etc/vintf/manifest/android.hardware.secure_element.xml": {
+      "bytes": 336,
+      "sha256": "459e501c5375536d697f582cf90fd394c4f9f2491e52b5bf1882410b4ab4e6e9"
+    },
+    "vendor/etc/vintf/manifest/android.hardware.security.onekeymint-service-qti.xml": {
+      "bytes": 526,
+      "sha256": "71b43ecedc2949f09d0445b49486ceb2c04bbb5b14f46e121dd6db5873ebf9aa"
+    },
+    "vendor/etc/vintf/manifest/secure_element-service.xml": {
+      "bytes": 278,
+      "sha256": "7b581c593f6b808c59bcdee67343debeaa471a14d9600e4a14a12ebb6d233a34"
+    },
+    "vendor/lib64/android.hardware.nfc-V1-ndk.so": {
+      "bytes": 102456,
+      "sha256": "394599308f084580b1298deb2fdd8f316b8d8b67798ec04d8904e8d3be3e2906"
+    },
+    "vendor/lib64/android.hardware.secure_element-V1-ndk.so": {
+      "bytes": 86008,
+      "sha256": "c536098c1e2bd4003831a0102b7267de30bf42a103ca8c145bf42c6b1bd5094a"
+    },
+    "vendor/lib64/android.hardware.secure_element@1.0.so": {
+      "bytes": 186696,
+      "sha256": "8c3a864c9a3a99d13fd7fd60f531433e3db040a935a346015f2a5220cd524f68"
+    },
+    "vendor/lib64/android.hardware.security.keymint-V3-ndk.so": {
+      "bytes": 154184,
+      "sha256": "2dfc618e5f56c8634fa04db27c518ae2fd35a81e48ae0e7058de8c86ceba96f6"
+    },
+    "vendor/lib64/android.hardware.security.rkp-V3-ndk.so": {
+      "bytes": 86112,
+      "sha256": "e444b034d2da44ec69d7896d43cca34a4863692d25c10e7f76ee34f1d3a8bbc6"
+    },
+    "vendor/lib64/android.hardware.security.secureclock-V1-ndk.so": {
+      "bytes": 85704,
+      "sha256": "0ebb56253ecf933163fabb5bca51b661f585be54b033df69df59b23807d1c25d"
+    },
+    "vendor/lib64/android.hardware.security.sharedsecret-V1-ndk.so": {
+      "bytes": 85888,
+      "sha256": "24b8ee6353b214d54a6e8905c5d0511ebe4a141a0b3f471ba6e436d54b9c8251"
+    },
+    "vendor/lib64/android.hardware.weaver-V2-ndk.so": {
+      "bytes": 85720,
+      "sha256": "b285d142b7a9b5b0a11590f8a61702de02dcaf2fddf642150ff368a0b08abccf"
+    },
+    "vendor/lib64/android.se.omapi-V1-ndk.so": {
+      "bytes": 118640,
+      "sha256": "bdefd74655a190119736ccf8877d0c18b04fc43b92e9a8c9ebecd442274b4f46"
+    },
+    "vendor/lib64/android.system.suspend-V1-ndk.so": {
+      "bytes": 68952,
+      "sha256": "edc3161b4383b188eb37cd92d9b7ad374a8d1864437ec5f68c00af3c9021f516"
+    },
+    "vendor/lib64/hw/libEseUtils.so": {
+      "bytes": 35424,
+      "sha256": "872c6acbfd2663004af4d6d4e1d63b5a772ce2e8b990b2f964e6536eaa94df64"
+    },
+    "vendor/lib64/libGPQeSE.so": {
+      "bytes": 119024,
+      "sha256": "0aa61f1773a2b46879438aa47d2f67580760285f512a1ee2c4b8a23adfb0202a"
+    },
+    "vendor/lib64/libGPTEE_vendor.so": {
+      "bytes": 52296,
+      "sha256": "a6e0eefec1aef4a04778bd4571c3b8e2b677c65c1a4c9e2d062d38b6c2f178ab"
+    },
+    "vendor/lib64/libQSEEComAPI.so": {
+      "bytes": 69360,
+      "sha256": "df0ea300978fc3921919782472f4d2fca5171c3674ecfd6563ca1d13f2babc1f"
+    },
+    "vendor/lib64/lib_android_keymaster_keymint_utils_V3.so": {
+      "bytes": 37472,
+      "sha256": "4ede8eca2d995f5fd668540b3d28ba2b191bddce1922412b108e39d14b983973"
+    },
+    "vendor/lib64/libaconfig_storage_read_api_cc.so": {
+      "bytes": 122144,
+      "sha256": "b5f2127ed0aa9cec2af7a0642a5c2691a42238d6d0bf43c5a8b05c1c762483fa"
+    },
+    "vendor/lib64/libbase.so": {
+      "bytes": 218672,
+      "sha256": "bb4f192ad7c8585b2715327f4fbb50cedcad242e6a8eaca8576a917670e10934"
+    },
+    "vendor/lib64/libbinder.so": {
+      "bytes": 755608,
+      "sha256": "f917e7455541b301d9e5243dcf70578bd47680261c28ff02591223ebfebb4aa3"
+    },
+    "vendor/lib64/libc++.so": {
+      "bytes": 1049704,
+      "sha256": "2267f93b8b3c9d1967f1833d5f71c7312213c43bb291250cf772800763037fb9"
+    },
+    "vendor/lib64/libcppbor.so": {
+      "bytes": 103256,
+      "sha256": "1b3c904ab23c79d633561cc8024b6d41224973c41d51f56313f61dd97b69bf25"
+    },
+    "vendor/lib64/libcppbor_external.so": {
+      "bytes": 103256,
+      "sha256": "e3bede0e0c30b90c1361a791b7786f8b399a111f127ddedae9278d691e7a87cf"
+    },
+    "vendor/lib64/libcppcose_rkp.so": {
+      "bytes": 119144,
+      "sha256": "7fa67d808e400f5bc274687ab0ca0dadbc7178c16b526a263781dba86e4d34a7"
+    },
+    "vendor/lib64/libcrypto.so": {
+      "bytes": 1569104,
+      "sha256": "530b9cfafc846ffb75ec7bb87fa5582334d5c9c0321c09fa9d80d16d0dd400dc"
+    },
+    "vendor/lib64/libcutils.so": {
+      "bytes": 118264,
+      "sha256": "188d0319b6e5d2a4bfc652d89c848bdaae0874f8e8c36ee87fd613b9bcc7ef43"
+    },
+    "vendor/lib64/libdiag.so": {
+      "bytes": 387856,
+      "sha256": "bc9899e75d6bf790d57ab50503d3b56e74ee349a4554861588872a9d29b27945"
+    },
+    "vendor/lib64/libdmabufheap.so": {
+      "bytes": 102400,
+      "sha256": "32b025f5894ae8e3e92eda02d9752fd8e592749fe1e6ab5607c74ef62cb64efc"
+    },
+    "vendor/lib64/libdrmfs.so": {
+      "bytes": 101480,
+      "sha256": "35dea9a4015bdf9864a3bbe0284ac98469188e99cc2605c6807c83cb989bbf5b"
+    },
+    "vendor/lib64/libhardware.so": {
+      "bytes": 35584,
+      "sha256": "dffea70a3876b589f2197956f394af83a1c893d192adc745873a9144cfe886bb"
+    },
+    "vendor/lib64/libhardware_legacy.so": {
+      "bytes": 52312,
+      "sha256": "35ceb19572cfec19dbde090e2d06ec7f6c9ae07cb7257f60c0f32b9eb5effd62"
+    },
+    "vendor/lib64/libhidlbase.so": {
+      "bytes": 669960,
+      "sha256": "8eb49abe14359c8829bde0cc2e7ae781e131bde2eb75e1743fa7799298e63313"
+    },
+    "vendor/lib64/libhwbinder.so": {
+      "bytes": 35256,
+      "sha256": "64256db932dcfcc61a277de58fbaece26589564e9c7c594e23563194395ee4d4"
+    },
+    "vendor/lib64/libion.so": {
+      "bytes": 51312,
+      "sha256": "abfc39c8adb2bf2f497f71d017b4cc5a598aa0a7dd3b5d4eaea33fec54663341"
+    },
+    "vendor/lib64/libjsoncpp.so": {
+      "bytes": 217000,
+      "sha256": "032ba673f2bf73bf006d8f8e1d4333cde39903c1d5a7bfbfa6cd633f8192f116"
+    },
+    "vendor/lib64/libkeymaster_messages.so": {
+      "bytes": 151080,
+      "sha256": "d6654e8bc17ad9a9730d43b6f1a86efc908386ef02345e2b8579b8ece768b04d"
+    },
+    "vendor/lib64/libkeymaster_portable.so": {
+      "bytes": 585216,
+      "sha256": "f117b6ffea03e1ec8f9c88bc1045e00a9e64ec178bee46a88600ca58c8be4aa9"
+    },
+    "vendor/lib64/libminkdescriptor.so": {
+      "bytes": 85976,
+      "sha256": "31356d80ac23f9dfdd36f7f1e34f865849f405811b2bfbeec093bf8956c7d0ca"
+    },
+    "vendor/lib64/libminksocket_vendor.so": {
+      "bytes": 251656,
+      "sha256": "32bd03b0130a611c8133c222314c471f0673e790a87f7ea73ee15c7e570a121f"
+    },
+    "vendor/lib64/libmisight.so": {
+      "bytes": 36568,
+      "sha256": "81a00eb87fb6ce3814fea4ab7e85c0eb60c93ccf6376b3dfb111166867823ff7"
+    },
+    "vendor/lib64/libqcbor.so": {
+      "bytes": 52112,
+      "sha256": "39edd28ebb7b425e8b671ac54b6869ba491caa57787f2994c24a33ca92f2e9f7"
+    },
+    "vendor/lib64/libqmi_cci.so": {
+      "bytes": 102216,
+      "sha256": "536d31e6677782e29be1a53e14016a0685c2a6d543d32dbcef6e9604c674b996"
+    },
+    "vendor/lib64/libqmi_common_so.so": {
+      "bytes": 51408,
+      "sha256": "39826f9ce26d619234468756744d19796758c7e23a9d889502983ac0eea8fe44"
+    },
+    "vendor/lib64/libqmi_csi.so": {
+      "bytes": 69192,
+      "sha256": "8e1de8eef6005df28372ddbbc7e179461b0a042e2ed6e333609e4a5937edec77"
+    },
+    "vendor/lib64/libqmi_encdec.so": {
+      "bytes": 52016,
+      "sha256": "c22371d0a504c1664cda514b410d85826ba6ed79b59d87b4bc4ca9523bc9618e"
+    },
+    "vendor/lib64/libqrtr.so": {
+      "bytes": 52200,
+      "sha256": "713e206437ae9b7ff0d4c31511e107eb87cf9312006f6e4d53558d192ffd0d27"
+    },
+    "vendor/lib64/libseclog.so": {
+      "bytes": 51464,
+      "sha256": "b3e8abb7565157d693d1d4fa3d9de2d538fb1ea6366d40302c908a34a09307ee"
+    },
+    "vendor/lib64/libsoft_attestation_cert.so": {
+      "bytes": 51664,
+      "sha256": "af02056fc86f0b1774f5a3fcec62a6d8845fd12c3d214969403d6b3ebdf2881d"
+    },
+    "vendor/lib64/libstnfc-streset.so": {
+      "bytes": 51968,
+      "sha256": "150a6c886ebe7a4097a988602b68ac64a4eb16f7e80fe384a610b86561e2114a"
+    },
+    "vendor/lib64/libutils.so": {
+      "bytes": 151280,
+      "sha256": "de32f694b39f815a0d2cf0ebd93d4dcea2148d4f5225e9384851a7bf2e6e0bf9"
+    },
+    "vendor/lib64/libvmmem.so": {
+      "bytes": 68920,
+      "sha256": "6eb89d01ff0681f0e26cf0810e66a2fc3f0982a1a95913620077b985ab504e64"
+    },
+    "vendor/lib64/libxml2.so": {
+      "bytes": 1225144,
+      "sha256": "6f21bbb2f951d8da4b2f4523d9bdbc7f3e31aada2fae6f7810ca85f231dc9063"
+    },
+    "vendor/lib64/server_configurable_flags.so": {
+      "bytes": 36256,
+      "sha256": "d9f03c7ce7f7e5fbce55d58e6ae27d3dc801dec2790384ba54a1996ef6841d93"
+    },
+    "vendor/lib64/vendor.xiaomi.hardware.aidl.mtdservice-V1-ndk.so": {
+      "bytes": 85592,
+      "sha256": "33d06164fa30405b47dd38e687e59fce0e764e4cdc004bcb6f2fe370b2a49fca"
+    },
+    "vendor/lib64/vendor.xiaomi.hardware.oldcredential-V1-ndk.so": {
+      "bytes": 68968,
+      "sha256": "fc8630115e7976674df59578ceee6257a054b5842457db5fd6f0e4942ec56933"
+    },
+    "vendor_dlkm/lib/modules/adsp_loader_dlkm.ko": {
+      "bytes": 28672,
+      "sha256": "a0f1d5e70bc209a0d01921fad76739999b25417ae038c6f2358ced7f0d649ae8"
+    },
+    "vendor_dlkm/lib/modules/cfg80211.ko": {
+      "bytes": 1824000,
+      "sha256": "6ca923a1b2c26ef4a99df9ddecab4125c10fbb7162b0dae80c5fce7c8e70dc33"
+    },
+    "vendor_dlkm/lib/modules/cnss2.ko": {
+      "bytes": 1069088,
+      "sha256": "27886dc7e96a1e845c05624d4e7b2a14503fdfaadc6e019f07b3e58012a4dad1"
+    },
+    "vendor_dlkm/lib/modules/cnss_nl.ko": {
+      "bytes": 16136,
+      "sha256": "9f48603bad052fe355fd77fc6d514233a2acdce551ba321d97f3ded8f5c450f0"
+    },
+    "vendor_dlkm/lib/modules/cnss_plat_ipc_qmi_svc.ko": {
+      "bytes": 51584,
+      "sha256": "bc52a6e601876584440beb23e007ef21c2c1759cce12c25f05890d0f4d201c67"
+    },
+    "vendor_dlkm/lib/modules/cnss_prealloc.ko": {
+      "bytes": 53920,
+      "sha256": "7bf2d6e9343bf05246ece93f3110c485e042f171287e453656e40642fe13e98c"
+    },
+    "vendor_dlkm/lib/modules/cnss_utils.ko": {
+      "bytes": 37024,
+      "sha256": "766d67c35fe92c514454127192599ff619b3a4858d0dbc656c69bebfd2517afc"
+    },
+    "vendor_dlkm/lib/modules/dwc3-msm.ko": {
+      "bytes": 220192,
+      "sha256": "6b560ba287b6de0b545d72a81870f23704208f4104b78f528e65b9a544379433"
+    },
+    "vendor_dlkm/lib/modules/focaltech_touch_3685g_1.ko": {
+      "bytes": 968024,
+      "sha256": "f4c7f17d4a134930fe2f3eca1d93416dfe159ebcf0ed9ab5b59f537d314b8e3b"
+    },
+    "vendor_dlkm/lib/modules/gh_irq_lend.ko": {
+      "bytes": 28440,
+      "sha256": "ef2a0f5fd244563191a86745a8e8a14cdfef4571f750c88921afafd7095bc582"
+    },
+    "vendor_dlkm/lib/modules/gpr_dlkm.ko": {
+      "bytes": 40896,
+      "sha256": "0ff9e6881ffd349961cdc1d7e3f887efb03c5bf852d71312f63758e978643e80"
+    },
+    "vendor_dlkm/lib/modules/gsim.ko": {
+      "bytes": 532096,
+      "sha256": "8fc22ee3a19b6e3c9e83ee327747fd763dc1264386a7ee3a97ac4ac41958c7d2"
+    },
+    "vendor_dlkm/lib/modules/icnss2.ko": {
+      "bytes": 551000,
+      "sha256": "cc87880eb61fd2586460e15720e3bce1983ac52c4891e6ffa5087fe0c67a3684"
+    },
+    "vendor_dlkm/lib/modules/ipam.ko": {
+      "bytes": 6445152,
+      "sha256": "b94e8f49048b9fd3f54a52569cf32b7a929d220fef4a3067d3bfac7f33214a69"
+    },
+    "vendor_dlkm/lib/modules/leds-qcom-flash.ko": {
+      "bytes": 30016,
+      "sha256": "252d3339192506e61f90c9d55204ab140d0a6751e0a2736a364213ce77e604cb"
+    },
+    "vendor_dlkm/lib/modules/leds-qpnp-vibrator-ldo.ko": {
+      "bytes": 25936,
+      "sha256": "39447df990447318530715644f2a9a86efed8f5caa1971421047e1ae9d01ad3c"
+    },
+    "vendor_dlkm/lib/modules/mac80211.ko": {
+      "bytes": 1740256,
+      "sha256": "623ea41332e165f625650797bfd45865496ab1434341724258a05ab6b5f60b49"
+    },
+    "vendor_dlkm/lib/modules/mca_adsp_glink.ko": {
+      "bytes": 25136,
+      "sha256": "24459819d094993d50e5bab5e0c5f4017d38a53006e8d615115154701c4a9e49"
+    },
+    "vendor_dlkm/lib/modules/mca_charge_mievent.ko": {
+      "bytes": 52224,
+      "sha256": "88742fb4b8462389a100d8ba38f29535aeb069e31836fe50cce66b09fb8f4eec"
+    },
+    "vendor_dlkm/lib/modules/mca_event.ko": {
+      "bytes": 23296,
+      "sha256": "7dede7acfdd3154d2710b9bc2459e2a93d83dc647ba0865265a71977d2ced68d"
+    },
+    "vendor_dlkm/lib/modules/mca_log.ko": {
+      "bytes": 32864,
+      "sha256": "62527f398f9ca8714785193f2cbdd91754a58aace61803a9f28cd9fa606a94c7"
+    },
+    "vendor_dlkm/lib/modules/mca_parse_dts.ko": {
+      "bytes": 26160,
+      "sha256": "d04b0922526f16872647506df1dc4605ab5e3609860d95b4c4df416ed7c84f75"
+    },
+    "vendor_dlkm/lib/modules/mca_platform_bc12_class.ko": {
+      "bytes": 15568,
+      "sha256": "849b10c62bd83b6eea26ee4281d27945ac436b1da9ae7f78ee7607b8006fed3d"
+    },
+    "vendor_dlkm/lib/modules/mca_platform_buckchg_class.ko": {
+      "bytes": 87416,
+      "sha256": "00ffbf0570c5bf6039dfa7cb37b772743b60be97a59da2993b6550e8a8809698"
+    },
+    "vendor_dlkm/lib/modules/mca_platform_cp_class.ko": {
+      "bytes": 69640,
+      "sha256": "57018b79c924e45bac1a62a040b5f334bc20305a4a4a201477db000769306d8b"
+    },
+    "vendor_dlkm/lib/modules/mca_platform_wireless_class.ko": {
+      "bytes": 96632,
+      "sha256": "04340953b07963fd2b9e1f5f9b36e242fb7dee8fdc2bc93099a3287583865313"
+    },
+    "vendor_dlkm/lib/modules/mca_protocol_class.ko": {
+      "bytes": 20496,
+      "sha256": "5b3a3f94ba5ec572f8266912e8cbb5ab7edfca568f83a74f82d1c632d0caef67"
+    },
+    "vendor_dlkm/lib/modules/mca_protocol_pd_class.ko": {
+      "bytes": 78248,
+      "sha256": "d294e48514b7c762b269a9b1692d2a1bb3afe69b3f767dbfbe5f81fb5e3080a2"
+    },
+    "vendor_dlkm/lib/modules/mca_protocol_qc_class.ko": {
+      "bytes": 16952,
+      "sha256": "bd322f7cb4aebcf6b4c7a3604358eee3d19a86c563d75b0c9320c716f9c65c12"
+    },
+    "vendor_dlkm/lib/modules/mca_qcom_subpmic_proxy.ko": {
+      "bytes": 70960,
+      "sha256": "c90c5382391b3db2745ee64a3092f0614e7d98e85e4b93eebd0c1a7e0004e4eb"
+    },
+    "vendor_dlkm/lib/modules/mca_strategy_class.ko": {
+      "bytes": 15720,
+      "sha256": "1d62cb2d364cd3034109300d92adcbdeb34ce479e8799ec1ff2301cc6fd4f17f"
+    },
+    "vendor_dlkm/lib/modules/mca_sysfs.ko": {
+      "bytes": 34848,
+      "sha256": "9c812136249891cf6660318f77a898939d350d00ec7e1c320f342024779a2b6d"
+    },
+    "vendor_dlkm/lib/modules/mhi.ko": {
+      "bytes": 315944,
+      "sha256": "c736b543dbcf6151d22d658422763c3fabf8d961512589de7e80db9019f96f53"
+    },
+    "vendor_dlkm/lib/modules/panel_event_notifier.ko": {
+      "bytes": 14728,
+      "sha256": "501d8224e5c56d6ba25cb5577fd08957b68182f25906bd21d8abbd0e42e72cc8"
+    },
+    "vendor_dlkm/lib/modules/pci-msm-drv.ko": {
+      "bytes": 455680,
+      "sha256": "f89b872f629406352a17aab003b294deecdf3473aac237ccdbdc78cac56ed35d"
+    },
+    "vendor_dlkm/lib/modules/pcie-pdc.ko": {
+      "bytes": 17064,
+      "sha256": "42cc1244463430788fd574fb1a75af95c96917af266aa2ba5e909f26d2682c4c"
+    },
+    "vendor_dlkm/lib/modules/pdr_interface.ko": {
+      "bytes": 32200,
+      "sha256": "f47dba45f0ebfe25a52defd9f73174b899a0cc8ae93799f4f893376e88e29802"
+    },
+    "vendor_dlkm/lib/modules/q6_dlkm.ko": {
+      "bytes": 16880,
+      "sha256": "ab2e9d5c8f6b9160c5123af5dcea8a9c0835cd4923e70f63a23dc1d171a23caa"
+    },
+    "vendor_dlkm/lib/modules/q6_notifier_dlkm.ko": {
+      "bytes": 41072,
+      "sha256": "e512c13bdef6b73b5a522a37aad81422b2f69d9d1f3fc0557f293a16c5202878"
+    },
+    "vendor_dlkm/lib/modules/q6_pdr_dlkm.ko": {
+      "bytes": 13592,
+      "sha256": "afce70aae8d0a860f2cf763969f519cd6da75fde5f644ba1770c4314a1942ebc"
+    },
+    "vendor_dlkm/lib/modules/qca_cld3_peach_v2.ko": {
+      "bytes": 21403464,
+      "sha256": "5ae28228738f775cb3c6816b1485e910878b3813007a9a141eb241cc458b35cc"
+    },
+    "vendor_dlkm/lib/modules/qca_cld3_wcn7750.ko": {
+      "bytes": 21113264,
+      "sha256": "eb1b614c6f58f14d7308259867d8770f05616de9fc85f323d5bdb5d01b20e5a6"
+    },
+    "vendor_dlkm/lib/modules/qcom-hv-haptics.ko": {
+      "bytes": 221680,
+      "sha256": "a8f96bd9a8356be994efce20b61d156343f7aaf33746ae20674cabb656f858fc"
+    },
+    "vendor_dlkm/lib/modules/qcom_glink.ko": {
+      "bytes": 98536,
+      "sha256": "830dd057f9698f7f20ef1ad1f47c09489ec51d79f9f7100409df01b8e7f84b02"
+    },
+    "vendor_dlkm/lib/modules/qcom_glink_smem.ko": {
+      "bytes": 22592,
+      "sha256": "f1b1af4a8c35ae9607e0e5828a33c0e5c407f391081a6a03e5824f98e6dbcab3"
+    },
+    "vendor_dlkm/lib/modules/qcom_pdr_msg.ko": {
+      "bytes": 15544,
+      "sha256": "c2b62cb34c5b7450e0c18686e4ac7194d49551542557e9499b818cd8aebbc00c"
+    },
+    "vendor_dlkm/lib/modules/qcom_pil_info.ko": {
+      "bytes": 16600,
+      "sha256": "3ef77121117e1d8c0608f284089f1e31b481743d9bc28d99eed904ec270fe22f"
+    },
+    "vendor_dlkm/lib/modules/qcom_q6v5.ko": {
+      "bytes": 113160,
+      "sha256": "b6633f7f0348bd0ed5fba02de46ae8af0220715b4d6b935527fed94427a6e57c"
+    },
+    "vendor_dlkm/lib/modules/qcom_q6v5_pas.ko": {
+      "bytes": 145352,
+      "sha256": "c8943d99336912f0879f35160c308ab0518ac671741a29e2652bf287e889b318"
+    },
+    "vendor_dlkm/lib/modules/qcom_ramdump.ko": {
+      "bytes": 30784,
+      "sha256": "5372403f7a556d52eaa4498abb57d82447caf8a8b6e7860c3d2758583982e0d5"
+    },
+    "vendor_dlkm/lib/modules/qcom_smd.ko": {
+      "bytes": 48504,
+      "sha256": "7353deebf3ede1698c03f3537fbeb9bbef7a8647eca1f951c4861cc11de8944e"
+    },
+    "vendor_dlkm/lib/modules/qcom_sysmon.ko": {
+      "bytes": 42208,
+      "sha256": "2e97f68da73d7f253a3894d378fad5e501c00c69680ab18f6fea82acf5897af5"
+    },
+    "vendor_dlkm/lib/modules/qcom_va_minidump.ko": {
+      "bytes": 40136,
+      "sha256": "3cac8fbc191a081c19bf6c70f57953bfb5b567fb214abb64ea65df224ef84a66"
+    },
+    "vendor_dlkm/lib/modules/qmi_helpers.ko": {
+      "bytes": 44688,
+      "sha256": "7df6bf2e2d0c0ef415136d7021c9b428274264c65f535f559a429a2586198715"
+    },
+    "vendor_dlkm/lib/modules/qsee_ipc_irq_bridge.ko": {
+      "bytes": 32912,
+      "sha256": "1cfbebac355ea27a3cefb90399ffe06ba8ecc2e4bbc3a72262c4a185a2d3a331"
+    },
+    "vendor_dlkm/lib/modules/qti_battery_charger.ko": {
+      "bytes": 87640,
+      "sha256": "c9fecf7dedcb57eb6de3c173efeda64e9924f1e94fd066d22cfc2c22fe8f37ca"
+    },
+    "vendor_dlkm/lib/modules/qti_pmic_glink.ko": {
+      "bytes": 42688,
+      "sha256": "c90a123af82b62b1b5968ddc0e4af0e0affedd51fae0e6ea7ba0df3ba9c0ebb7"
+    },
+    "vendor_dlkm/lib/modules/redriver.ko": {
+      "bytes": 17560,
+      "sha256": "fb138072a02918a65041b69a6d8aed99ed93eb4f76a735b231ed6546c0ba37b5"
+    },
+    "vendor_dlkm/lib/modules/repeater.ko": {
+      "bytes": 18864,
+      "sha256": "26d07f043440061d4d55dcb2d5edcc42aaccd4d45922c0833c09d294bf1a5a97"
+    },
+    "vendor_dlkm/lib/modules/rmnet_mem.ko": {
+      "bytes": 68120,
+      "sha256": "b884f7d75cd832dbdb253b673d3d478be9e3517380c7e88d5181d4958cfa582d"
+    },
+    "vendor_dlkm/lib/modules/rproc_qcom_common.ko": {
+      "bytes": 66472,
+      "sha256": "3f821d126e099d71007efaf72aaf17077a53576154e55aa7252d69fcec417bb4"
+    },
+    "vendor_dlkm/lib/modules/smcinvoke_dlkm.ko": {
+      "bytes": 140088,
+      "sha256": "c43b79227806b79a7906ef32f2f7de8a2b69f66c8df581cbbf21cd76061ce939"
+    },
+    "vendor_dlkm/lib/modules/smem-mailbox.ko": {
+      "bytes": 29792,
+      "sha256": "9549b937b0c27cc09d8f246201d06592280b3f40e8036c7c1c6c7e6910c85fa3"
+    },
+    "vendor_dlkm/lib/modules/snd_event_dlkm.ko": {
+      "bytes": 28120,
+      "sha256": "55c6d1593792e4f8672187a8cf35f56b8ceb75e2fd57a7c2ac9f91795b0a2f9f"
+    },
+    "vendor_dlkm/lib/modules/spf_core_dlkm.ko": {
+      "bytes": 35456,
+      "sha256": "dfef4d8f7a08f1f92b35deb05c904830addfc2c63843e6a2252361184a7f527d"
+    },
+    "vendor_dlkm/lib/modules/stm_nfc_i2c.ko": {
+      "bytes": 51856,
+      "sha256": "dcdb3117b1f8d0f7f0bfc76fdb6cc09d7558f88259dbcea8a88d4886533522ac"
+    },
+    "vendor_dlkm/lib/modules/stm_st54se_gpio.ko": {
+      "bytes": 19160,
+      "sha256": "37021db5e0e8d982ad61a825a1f40aa45109eb75f7d18a7d6dd43b95e22a0591"
+    },
+    "vendor_dlkm/lib/modules/swr_dlkm.ko": {
+      "bytes": 70200,
+      "sha256": "c2381fd01a0be7ece3a4660ea19dd72596b9c86b11adca5230af4cd838802231"
+    },
+    "vendor_dlkm/lib/modules/swr_haptics_dlkm.ko": {
+      "bytes": 45896,
+      "sha256": "05ce5a012e68718925368c012244d5e40143d2a9b4cc9903770407e7893bb230"
+    },
+    "vendor_dlkm/lib/modules/usb_f_gsi.ko": {
+      "bytes": 177760,
+      "sha256": "9558752201469ea79e4a7b620adac1b54320bbebe4d1af864924192521603a17"
+    },
+    "vendor_dlkm/lib/modules/wcd_usbss_i2c.ko": {
+      "bytes": 93368,
+      "sha256": "065050ce649b0929e7952c02bf1b99df706b7970ce97e9ea8902e875f9a8a44c"
+    },
+    "vendor_dlkm/lib/modules/wlan_firmware_service.ko": {
+      "bytes": 104464,
+      "sha256": "94882abaf85b3b38fd52606f02741f7282f8082be9cf3ff81ffc4dd322a92d3e"
+    },
+    "vendor_dlkm/lib/modules/xiaomi_touch.ko": {
+      "bytes": 232512,
+      "sha256": "13184d80a895c0116587e470b02e3353d9323f420d770f88eb89a967ea8f8f26"
+    },
+    "vendor_dlkm/lib/modules/modules.load": {
+      "bytes": 1267,
+      "sha256": "c199e187c2ff6e5b080abb2cc2666ff396d800b5a37ad49787f2b25f410daead"
+    },
+    "vendor_dlkm/lib/modules/modules.dep": {
+      "bytes": 6648,
+      "sha256": "4868835a93093daf383d56759d1c66df0d32d9b9dd7629da7535993e77f195e9"
+    },
+    "kernel": {
+      "bytes": 42097152,
+      "sha256": "2f3af9c34e034d0b10491da3e7e0c383115e5690fa714a6631b8258227bc1e58"
+    }
+  },
+  "file_count": 162,
+  "payload_bytes": 116231372,
+  "warnings": [
+    "Not flashable. Boot, runtime library ABI, binder, OMAPI and PIN decrypt NOT tested.",
+    "Stock Android init RC files excluded. Songyuan recovery-specific init needed.",
+    "System Bionic/OMAPI not copied. Must verify TWRP runtime ABI."
+  ]
+}
