@@ -1,0 +1,9 @@
+# Genuine ID305 Qualcomm listener in recovery-only namespace.
+service vendor.qseecomd /vendor/bin/qseecomd
+    class core
+    disabled
+    user root
+    group root drmrpc
+    socket notify-topology stream 0660 system drmrpc
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/odm/lib64:/system/lib64:/sbin
+    seclabel u:r:recovery:s0

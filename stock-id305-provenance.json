@@ -1,0 +1,79 @@
+{
+  "device": "songyuan",
+  "region": "ID",
+  "firmware": "OS3.0.305.0.WGNIDXM",
+  "android_release": "16",
+  "sdk": 36,
+  "platform": "canoe",
+  "soc": "SM8850",
+  "platform_spl": "2026-08-01",
+  "vendor_spl": "2026-08-01",
+  "source": "read-only extracted official ID305 ROM on user's PC, independent of donor",
+  "kind": "reference_sha256_ONLY_no_binaries",
+  "files": {
+    "system/system/build.prop": {
+      "bytes": 11694,
+      "sha256": "1759292bbe6632a2f9b85df718b597dcf8f00e64c33757fa84d93fed315d5818"
+    },
+    "vendor/build.prop": {
+      "bytes": 15580,
+      "sha256": "021f89003aa7a08141e9fba76828b85079d059ee3e917ac798fc27a3a8824ac9"
+    },
+    "odm/etc/build.prop": {
+      "bytes": 18442,
+      "sha256": "88990b3ee7c86b16a98f17b8cec63c39749dd01dd32133bb65116b59f881325e"
+    },
+    "vendor/etc/fstab.qcom": {
+      "bytes": 13994,
+      "sha256": "5c175768fa08de911dcaf0ba0d8349fcae0f868791ba5e77b67067f1cd3c6452"
+    },
+    "odm/etc/init/android.hardware.weaver-service.thales.rc": {
+      "bytes": 232,
+      "sha256": "0329c9d041da62a1d7939b0914f98a3a5f9fa37fccb976904c827d6666855c13"
+    },
+    "odm/etc/init/nfc-service-st.rc": {
+      "bytes": 265,
+      "sha256": "7923adc3969ef77a3f1d4e0d4dc44598a571dff480da43b09cdc7444d3cdf0b7"
+    },
+    "odm/etc/init/vendor.xiaomi.hardware.authsecretd.rc": {
+      "bytes": 477,
+      "sha256": "f79868ad37fad115f004881e2acf0527f4bc832ae9c69ecd79727c3ef90d78ea"
+    },
+    "odm/etc/vintf/manifest/android.hardware.weaver-service.thales.xml": {
+      "bytes": 314,
+      "sha256": "89de9acd89f78b4657ae02d7b28e701aec4ce7cf6b7c0b1750a93e391c9b018d"
+    },
+    "odm/etc/vintf/manifest/nfc-service-st.xml": {
+      "bytes": 409,
+      "sha256": "de063bac1b91f4498fe6ee8706e5a3760919a71ac8232410f1ac428d8e6229d9"
+    },
+    "vendor/etc/init/android.hardware.secure_element-service.qti.rc": {
+      "bytes": 146,
+      "sha256": "7f60d19c0fdc1dc4d6c943b53480fb5d3d75609fd480ef8a6c97bbee942e5a1a"
+    },
+    "odm/firmware/focaltech_ts_fw_songyuan.bin": {
+      "bytes": 148352,
+      "sha256": "7a5e927deeda12ac9fe8ea0dbdd673702222ddccbc37088ffc84d7c328b85fcc"
+    },
+    "odm/bin/hw/vendor.xiaomi.hardware.authsecretd": {
+      "bytes": 120296,
+      "sha256": "fe2e360aca9c50394f39e590883f3aaab651dc72cba451f31364184b9ceb6857"
+    },
+    "vendor/etc/passwd": {
+      "bytes": 656,
+      "sha256": "2279d67b02cf2b7ed7d5e774edb606b1aefac0c6cd5fe9f1047d0c1d99331db3"
+    },
+    "vendor/etc/group": {
+      "bytes": 401,
+      "sha256": "a947608d0b5908a78877e4596f6526d37a2a6f2f82c7369751808c5889f8738d"
+    },
+    "vendor/lib64/vendor.xiaomi.hardware.oldcredential-V1-ndk.so": {
+      "bytes": 68968,
+      "sha256": "fc8630115e7976674df59578ceee6257a054b5842457db5fd6f0e4942ec56933"
+    },
+    "odm/etc/vintf/manifest/vendor.xiaomi.hardware.miauthsecretd.xml": {
+      "bytes": 506,
+      "sha256": "57bf79f84c5df7014c281997e7db76b6d5a7e08acb3b7f0036a3216a9dfb4b11"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# Stock ID305 QTI Gatekeeper executable and original system:system identity.
+# Recovery-specific on-init start remains unverified against Gatekeeper SPU mode.
+on init
+    start vendor.gatekeeper_default
+
+service vendor.gatekeeper_default /vendor/bin/hw/android.hardware.gatekeeper-rust-service-qti
+    class early_hal
+    user system
+    group system
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/odm/lib64:/system/lib64:/sbin
+    seclabel u:r:recovery:s0

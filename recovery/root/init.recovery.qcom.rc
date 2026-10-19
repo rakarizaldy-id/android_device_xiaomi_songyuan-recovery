@@ -1,0 +1,55 @@
+# Recovery init: POCO F9 Ultra ID305 OEM; source-only, not a runtime claim.
+# No donor ADSP helper/SSR. Never rewrite vendor Binder strings.
+on init
+    setprop sys.usb.configfs 1
+
+# OEM ID305 stock recovery derives the controller from boot properties.
+# TWRP16 init.rc's USB gadget trigger uses sys.usb.controller; do not wait
+# indefinitely for hardware nodes or force a controller mode here.
+on property:ro.boot.usbcontroller=*
+    setprop sys.usb.controller ${ro.boot.usbcontroller}
+
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    wait /dev/block/bootdevice/by-name/ssd 10
+    mkdir /vendor/firmware_mnt 0755 root root
+    mkdir /vendor/modem_firmware 0755 root root
+    mkdir /vendor/dsp 0755 root root
+    wait /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} 10
+    mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /vendor/firmware_mnt ro
+    wait /dev/block/bootdevice/by-name/modemfirmware${ro.boot.slot_suffix} 10
+    mount vfat /dev/block/bootdevice/by-name/modemfirmware${ro.boot.slot_suffix} /vendor/modem_firmware ro
+    wait /dev/block/bootdevice/by-name/dsp${ro.boot.slot_suffix} 10
+    mount ext4 /dev/block/bootdevice/by-name/dsp${ro.boot.slot_suffix} /vendor/dsp ro nosuid nodev
+    start vendor.qseecomd
+
+on boot
+    setprop sys.usb.config adb
+
+# Start touch only after TWRP reports module loader and ADB active.
+on property:twrp.modules.loaded=true && property:init.svc.adbd=running
+    start songyuan-touch-init
+
+# QSEE/KeyMint/Gatekeeper do NOT wait for ADSP remoteproc to come online.
+on property:init.svc.vendor.qseecomd=running
+    start vendor.minkdaemon
+
+# "running" is not AIDL registration. Do not attempt CE PIN until the user
+# confirms actual Weaver getConfig and secure element response on the phone.
+on property:vendor.sys.listeners.registered=true && property:init.svc.vendor.minkdaemon=running
+    start vendor.secure_element
+    # Official TWRP16 external/se_omapi owns the sole init.rc/service.
+    # It starts on late-init, as in EkinStrop Nezha; do not duplicate its RC.
+    start miweaver_hal_service
+
+on property:init.svc.miweaver_hal_service=running && property:vendor.sys.listeners.registered=true
+    start weaver_hal_service
+
+service songyuan-touch-init /system/bin/sh /system/bin/songyuan-touch-init.sh
+    class core
+    disabled
+    oneshot
+    user root
+    group root system input
+    seclabel u:r:recovery:s0

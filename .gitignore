@@ -1,0 +1,19 @@
+# Private OEM payload never committed. Device-specific source RC/XML IS allowed.
+prebuilt/
+recovery/root/vendor/bin/
+recovery/root/vendor/lib/
+recovery/root/vendor/lib64/
+recovery/root/vendor/firmware/
+recovery/root/odm/bin/
+recovery/root/odm/lib/
+recovery/root/odm/lib64/
+recovery/root/odm/firmware/
+recovery/root/vendor_dlkm/lib/
+out/
+*.img
+*.elf
+*.so
+*.ko
+*.bin
+*.tar*
+curated-manifest.json

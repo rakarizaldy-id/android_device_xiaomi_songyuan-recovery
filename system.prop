@@ -1,0 +1,11 @@
+# Identity: genuine POCO F9 Ultra global-Indonesia (songyuan), ID305.
+# Keep framework/vendor SPL/OS values in BoardConfig.mk; never fake ro.build.*
+ro.product.device=songyuan
+ro.product.name=songyuan_global
+ro.product.brand=POCO
+ro.product.model=POCO F9 Ultra
+ro.product.manufacturer=Xiaomi
+ro.board.platform=canoe
+ro.sf.lcd_density=480
+vendor.gatekeeper.disable_spu=true
+vendor.gatekeeper.is_security_level_spu=0
