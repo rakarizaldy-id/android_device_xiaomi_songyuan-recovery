@@ -1,8 +1,0 @@
-service vendor.keymint-strongbox /odm/bin/hw/android.hardware.security.keymint-service.strongbox-thales
-    class early_hal
-    disabled
-    oneshot
-    user 2913
-    group 2913
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/odm/lib64:/system/lib64:/sbin
-    seclabel u:r:recovery:s0

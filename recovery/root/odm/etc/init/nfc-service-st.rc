@@ -1,8 +1,0 @@
-service nfc_hal_service /odm/bin/hw/android.hardware.nfc-service-st
-    class hal
-    user nfc
-    group nfc
-    interface aidl android.hardware.nfc.INfc/default
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
