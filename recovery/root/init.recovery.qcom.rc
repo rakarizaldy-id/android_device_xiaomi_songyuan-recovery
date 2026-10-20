@@ -1,15 +1,7 @@
-# Recovery init: POCO F9 Ultra hardware support under EkinStrop TWRP16 startup model.
-# Firmware, kernel and HALs are all original Songyuan OEM; no device secrets written.
-import /init.recovery.wifi.rc
-# No donor ADSP helper/SSR. Never rewrite vendor Binder strings.
 on init
     setprop sys.usb.configfs 1
-    # EkinStrop prepdecrypt resolves the installed system/version/SPL from read-only partitions.
     setprop prepdecrypt.setpatch true
 
-# OEM ID305 stock recovery derives the controller from boot properties.
-# TWRP16 init.rc's USB gadget trigger uses sys.usb.controller; do not wait
-# indefinitely for hardware nodes or force a controller mode here.
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
 
@@ -31,19 +23,11 @@ on fs
 on boot
     setprop sys.usb.config adb
 
-# Start touch only after TWRP reports module loader and ADB active.
 on property:twrp.modules.loaded=true && property:init.svc.adbd=running
     start songyuan-touch-init
 
-# QSEE/KeyMint/Gatekeeper do NOT wait for ADSP remoteproc to come online.
-# Ekin-pattern staged security preparation -> Mink -> eSE -> OMAPI -> Weaver.
-# OEM firmware is mounted above; the helper validates it, never substitutes
-# Nezha TA or modifies /data. Extra AIDL service readiness remains untested.
 on property:init.svc.vendor.qseecomd=running
     start recovery.songyuan-security-setup
-
-# Official TWRP16 external/se_omapi remains the SOLE init.rc producer; its
-# upstream late-init trigger handles se_omapi, not a duplicate device service.
 
 service songyuan-touch-init /system/bin/sh /system/bin/songyuan-touch-init.sh
     class core

@@ -1,15 +1,8 @@
 #!/sbin/sh
 
-# The below variables shouldn't need to be changed
-# unless you want to call the script something else
 SCRIPTNAME="prepdecrypt"
 LOGFILE=/tmp/recovery.log
 
-#
-# Override default settings
-#
-# If you want to force setting of osver and patchlevel to the system/vendor version,
-# set the below prop in init.recovery "on init" to trigger the override function
 check_setpatch_override() {
 	setpatch_prop=$(getprop $SCRIPTNAME.setpatch)
 	if [ -z "$setpatch_prop" ]; then
@@ -20,21 +13,10 @@ check_setpatch_override() {
 		SETPATCH=$setpatch_prop
 	fi
 }
-#
-# Default TWRP values for PLATFORM_VERSION and PLATFORM_SECURITY_PATCH
-#
-# ro.build.version.release and ro.build.version.security_patch will get
-# set to the below values respectively if these props are blank when
-# the script runs. These values should be updated to reflect the
-# TWRP defaults in your device's BoardConfig.mk
 osver_twrp="99.87.36"
 patchlevel_twrp="2099-12-31"
 
-# Set default log level
 DEFAULT_LOGLEVEL=1
-# 0 Errors only
-# 1 Errors and Information
-# 2 Errors, Information, and Debugging
 CUSTOM_LOGLEVEL=$(getprop $SCRIPTNAME.loglevel)
 if [ -n "$CUSTOM_LOGLEVEL" ]; then
 	__VERBOSE="$CUSTOM_LOGLEVEL"
@@ -42,14 +24,7 @@ else
 	__VERBOSE="$DEFAULT_LOGLEVEL"
 fi
 
-# Exit codes:
-# 0 Success
-# 1 Unknown encryption type
-# 2 Temp Mount Failure
-
-# Function for logging to the recovery log
 log_print() {
-	# 0 = Error; 1 = Information; 2 = Debugging
 	case $1 in
 	0 | error)
 		LOG_LEVEL="E"
@@ -299,7 +274,6 @@ recpath="/dev/block/bootdevice/by-name/recovery$suffix"
 check_setpatch_override
 if [ -e "$recpath" ]; then
 	log_print 2 "Device has recovery partition!"
-	# This should only be set to true for devices with recovery-in-boot
 	if [ "$SETPATCH_OVERRIDE" = "false" ]; then
 		SETPATCH=false
 	fi

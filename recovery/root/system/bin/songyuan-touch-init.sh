@@ -1,8 +1,4 @@
 #!/system/bin/sh
-# Native Songyuan ID305 — OEM FocalTech v35, 148352 bytes; bounded retry.
-# No partition writes, no flash, no foreign firmware.
-# ID305 modules.dep: FocalTech -> Xiaomi Touch -> panel_event_notifier.
-# miev is NOT a module/dependency in the OEM graph: never gate on it.
 LOG=/tmp/songyuan-touch-init.log
 FW=/odm/firmware/focaltech_ts_fw_songyuan.bin
 MOD1=/vendor_dlkm/lib/modules/xiaomi_touch.ko

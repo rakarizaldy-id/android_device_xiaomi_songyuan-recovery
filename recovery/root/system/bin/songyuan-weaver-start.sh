@@ -1,7 +1,4 @@
 #!/system/bin/sh
-# Adapted from EkinStrop's eSE/OMAPI/Thales sequencing.
-# Songyuan hardware: ST54 + genuine QTI secure element + MiAuthSecret + Thales.
-# State=running does not prove AIDL getConfig or FBE CE/PIN success.
 LOG=/tmp/songyuan-weaver-start.log
 note(){ echo "$*" >> "$LOG"; }
 wait_service() {
@@ -22,13 +19,12 @@ while [ ! -e /dev/st54spi_gpio ] && [ "$i" -lt 20 ]; do
     sleep 1; i=$((i+1))
 done
 [ -e /dev/st54spi_gpio ] || { note 'BLOCKED original ST54 device node'; exit 1; }
-start vendor.secure_element
+setprop ctl.start vendor.secure_element
 wait_service vendor.secure_element || exit 1
-# se_omapi is started by the original TWRP16 external/se_omapi init_rc.
 wait_service se_omapi || exit 1
-start miweaver_hal_service
+setprop ctl.start miweaver_hal_service
 wait_service miweaver_hal_service || exit 1
-start weaver_hal_service
+setprop ctl.start weaver_hal_service
 wait_service weaver_hal_service || exit 1
-start odm.prepdecrypt
-note 'PASS requested Ekin prepdecrypt stage; AIDL/CE/PIN require live verification'
+setprop ctl.start odm.prepdecrypt
+note 'prepdecrypt startup requested'
