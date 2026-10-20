@@ -1,0 +1,20 @@
+# EkinStrop security chain adapted strictly to native ID305.
+# This file owns helper service declarations only, not duplicate vendor HALs.
+service recovery.songyuan-security-setup /system/bin/sh /system/bin/songyuan-security-setup.sh
+    class core
+    disabled
+    oneshot
+    user root
+    group root system
+    seclabel u:r:recovery:s0
+
+on property:init.svc.vendor.minkdaemon=running && property:recovery.songyuan.security_firmware_ready=1
+    start recovery.songyuan-weaver-start
+
+service recovery.songyuan-weaver-start /system/bin/sh /system/bin/songyuan-weaver-start.sh
+    class core
+    disabled
+    oneshot
+    user root
+    group root system
+    seclabel u:r:recovery:s0

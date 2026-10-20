@@ -1,0 +1,82 @@
+# Mounting the stock partitions hides recovery's ramdisk crypto helpers, so
+# keep WLAN behind the completed decryption preparation chain.
+on property:twrp.super.symlinks_created=true && property:recovery.songyuan.security_firmware_ready=1 && property:crypto.ready=1
+    start songyuan-wlan-setup
+
+service songyuan-wlan-setup /system/bin/songyuan-wlan-setup.sh
+    user root
+    group root system inet net_admin wifi
+    capabilities CHOWN DAC_OVERRIDE FOWNER SYS_ADMIN SYS_MODULE NET_ADMIN NET_RAW
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service songyuan-wlan-autostart /system/bin/songyuan-wlan-control.sh start
+    user root
+    group root system inet net_admin wifi
+    capabilities CHOWN DAC_OVERRIDE FOWNER NET_ADMIN NET_RAW
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service songyuan-wpa-supplicant /vendor/bin/hw/wpa_supplicant -Dnl80211 -iwlan0 -dd -O/tmp/recovery/sockets -c/tmp/recovery/wpa_supplicant.conf
+    interface aidl android.hardware.wifi.supplicant.ISupplicant/default
+    interface aidl vendor.qti.hardware.wifi.supplicant.ISupplicantVendor/default
+    user root
+    group root system inet net_admin wifi
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service songyuan-wlan-monitor /system/bin/songyuan-wlan-control.sh monitor
+    user root
+    group root system inet net_admin wifi
+    capabilities NET_ADMIN NET_RAW
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service songyuan-qrtr-ns /vendor/bin/qrtr-ns -f
+    user root
+    group root
+    capabilities NET_BIND_SERVICE
+    disabled
+    seclabel u:r:recovery:s0
+
+service songyuan-rmt-storage /vendor/bin/rmt_storage
+    user root
+    group root
+    ioprio rt 0
+    disabled
+    seclabel u:r:recovery:s0
+
+service songyuan-pd-mapper /vendor/bin/pd-mapper
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service songyuan-pm-proxy /vendor/bin/pm-proxy
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service songyuan-pm-service /vendor/bin/pm-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service songyuan-tftp-server /vendor/bin/tftp_server
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service songyuan-cnss-daemon /vendor/bin/cnss-daemon -n -l
+    user root
+    group root system inet net_admin wifi
+    capabilities NET_ADMIN
+    disabled
+    seclabel u:r:recovery:s0

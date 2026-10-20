@@ -1,4 +1,6 @@
-# Recovery init: POCO F9 Ultra original ID305; not yet runtime tested.
+# Recovery init: POCO F9 Ultra hardware support under EkinStrop TWRP16 startup model.
+# Firmware, kernel and HALs are all original Songyuan OEM; no device secrets written.
+import /init.recovery.wifi.rc
 # No donor ADSP helper/SSR. Never rewrite vendor Binder strings.
 on init
     setprop sys.usb.configfs 1
@@ -32,19 +34,14 @@ on property:twrp.modules.loaded=true && property:init.svc.adbd=running
     start songyuan-touch-init
 
 # QSEE/KeyMint/Gatekeeper do NOT wait for ADSP remoteproc to come online.
+# Ekin-pattern staged security preparation -> Mink -> eSE -> OMAPI -> Weaver.
+# OEM firmware is mounted above; the helper validates it, never substitutes
+# Nezha TA or modifies /data. Extra AIDL service readiness remains untested.
 on property:init.svc.vendor.qseecomd=running
-    start vendor.minkdaemon
+    start recovery.songyuan-security-setup
 
-# "running" is not AIDL registration. Do not attempt CE PIN until the user
-# confirms actual Weaver getConfig and secure element response on the phone.
-on property:vendor.sys.listeners.registered=true && property:init.svc.vendor.minkdaemon=running
-    start vendor.secure_element
-    # Official TWRP16 external/se_omapi owns the sole init.rc/service.
-    # It starts on late-init; do not duplicate the upstream service definition.
-    start miweaver_hal_service
-
-on property:init.svc.miweaver_hal_service=running && property:vendor.sys.listeners.registered=true
-    start weaver_hal_service
+# Official TWRP16 external/se_omapi remains the SOLE init.rc producer; its
+# upstream late-init trigger handles se_omapi, not a duplicate device service.
 
 service songyuan-touch-init /system/bin/sh /system/bin/songyuan-touch-init.sh
     class core
