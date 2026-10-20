@@ -1,5 +1,3 @@
-# Stock ID305 QTI Gatekeeper executable and original system:system identity.
-# Recovery-specific on-init start remains unverified against Gatekeeper SPU mode.
 on init
     start vendor.gatekeeper_default
 

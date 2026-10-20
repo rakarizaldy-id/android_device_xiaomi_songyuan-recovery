@@ -1,4 +1,3 @@
-# Stock ID305 Thales StrongBox. Disabled pending native eSE readiness.
 service vendor.keymint-strongbox /odm/bin/hw/android.hardware.security.keymint-service.strongbox-thales
     class early_hal
     disabled

@@ -1,5 +1,3 @@
-# Stock ID305 QTI KeyMint executable; restore original system UID/GID.
-# Recovery seclabel remains explicit; compiled policy compatibility still unproven.
 on init
     start vendor.keymint
 

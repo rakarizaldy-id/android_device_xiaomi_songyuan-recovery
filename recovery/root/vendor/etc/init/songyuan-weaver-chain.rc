@@ -1,5 +1,3 @@
-# EkinStrop security chain adapted strictly to native ID305.
-# This file owns helper service declarations only, not duplicate vendor HALs.
 service recovery.songyuan-security-setup /system/bin/sh /system/bin/songyuan-security-setup.sh
     class core
     disabled

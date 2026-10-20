@@ -1,5 +1,3 @@
-# Genuine ID305 QTI secure element, early_hal system/nfc per OEM.
-# System-first AIDL NDK dynamic library resolution; no V16 binder path patch.
 service vendor.secure_element /vendor/bin/hw/android.hardware.secure_element-service.qti
     class early_hal
     disabled

@@ -1,4 +1,3 @@
-# Genuine ID305 Qualcomm Mink daemon; no /data writes.
 service vendor.minkdaemon /vendor/bin/hlosminkdaemon
     class hal
     disabled

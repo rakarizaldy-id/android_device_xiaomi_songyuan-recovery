@@ -1,5 +1,3 @@
-# Genuine songyuan ID305 Thales Weaver UID/GID 2916 from vendor passwd/group.
-# Recovery-only lazy AIDL/oneshot adaptation; not proven working CE decrypt.
 service weaver_hal_service /odm/bin/hw/android.hardware.weaver-service.thales
     class hal
     disabled

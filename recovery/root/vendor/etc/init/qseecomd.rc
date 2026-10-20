@@ -1,4 +1,3 @@
-# Genuine ID305 Qualcomm listener in recovery-only namespace.
 service vendor.qseecomd /vendor/bin/qseecomd
     class core
     disabled
