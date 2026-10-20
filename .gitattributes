@@ -1,1 +1,3 @@
 * text=auto
+recovery/root/vendor/etc/Hapticsconfig.xml -text
+recovery/root/vendor/etc/gpfspath_oem_config.xml -text
