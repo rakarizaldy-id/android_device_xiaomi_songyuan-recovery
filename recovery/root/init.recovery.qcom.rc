@@ -4,6 +4,8 @@ import /init.recovery.wifi.rc
 # No donor ADSP helper/SSR. Never rewrite vendor Binder strings.
 on init
     setprop sys.usb.configfs 1
+    # EkinStrop prepdecrypt resolves the installed system/version/SPL from read-only partitions.
+    setprop prepdecrypt.setpatch true
 
 # OEM ID305 stock recovery derives the controller from boot properties.
 # TWRP16 init.rc's USB gadget trigger uses sys.usb.controller; do not wait

@@ -30,4 +30,5 @@ start miweaver_hal_service
 wait_service miweaver_hal_service || exit 1
 start weaver_hal_service
 wait_service weaver_hal_service || exit 1
-note 'PASS process startup ordering only; require live AIDL registration testing'
+start odm.prepdecrypt
+note 'PASS requested Ekin prepdecrypt stage; AIDL/CE/PIN require live verification'
