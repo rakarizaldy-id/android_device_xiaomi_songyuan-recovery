@@ -1,31 +1,20 @@
-# TWRP partition flags for Xiaomi 17 Ultra (songyuan)
-
-# Boot partitions
 /boot               emmc    /dev/block/by-name/boot              flags=slotselect;display="Boot";backup=1;flashimg=1
 /init_boot          emmc    /dev/block/by-name/init_boot         flags=slotselect;display="Init Boot";backup=1;flashimg=1
 /vendor_boot        emmc    /dev/block/by-name/vendor_boot       flags=slotselect;display="Vendor Boot";backup=1;flashimg=1
 /recovery           emmc    /dev/block/by-name/recovery          flags=display="Recovery";backup=1;flashimg=1
 /dtbo               emmc    /dev/block/by-name/dtbo              flags=slotselect;display="DTBO";backup=1;flashimg=1
 
-# AVB partitions
 /vbmeta             emmc    /dev/block/by-name/vbmeta            flags=slotselect;display="VBMeta";backup=1;flashimg=1
 /vbmeta_system      emmc    /dev/block/by-name/vbmeta_system     flags=slotselect;display="VBMeta System";backup=1;flashimg=1
 
-# Firmware / Modem
-/firmware           vfat    /dev/block/by-name/modem             flags=slotselect;display="Firmware";mounttodecrypt
 /modem              emmc    /dev/block/by-name/modem             flags=slotselect;backup=1;display="Modem"
 /bluetooth          emmc    /dev/block/by-name/bluetooth         flags=slotselect;backup=1;display="Bluetooth"
 /dsp                emmc    /dev/block/by-name/dsp               flags=slotselect;backup=1;display="DSP"
 
-# EFS / Modem NV
 /efs1               emmc    /dev/block/by-name/modemst1          flags=backup=1;display="EFS"
 /efs2               emmc    /dev/block/by-name/modemst2          flags=backup=1;subpartitionof=/efs1
 
-# Persist
 /persist            ext4    /dev/block/by-name/persist           flags=display="Persist";backup=1;backupname=persist;fsflags=ro
 
-# Metadata
 /metadata           f2fs    /dev/block/by-name/metadata          flags=display="Metadata";wrappedkey
 
-# USB OTG (the wildcard parent is hidden until a real block device appears)
-/usb_otg             auto    /devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto* flags=display="USB OTG";storagename="USB OTG";storage;removable;wipeingui

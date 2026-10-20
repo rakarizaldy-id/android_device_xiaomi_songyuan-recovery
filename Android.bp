@@ -1,11 +1,6 @@
-// POCO F9 Ultra (songyuan), native Android 16 recovery-only modules.
-// All source remains first-party: no external donor ELF or vendor artifacts.
 soong_namespace {
 }
 
-// Register the legacy ARM64 pixelflinger entrypoints that are absent from
-// some current libc variants. Installing a .so does NOT prove it is loaded:
-// real recovery ELF DT_NEEDED / loader coverage must be audited after compile.
 cc_library_shared {
     name: "libsongyuan_memset_compat",
     srcs: ["compat/songyuan_memset_compat.c"],

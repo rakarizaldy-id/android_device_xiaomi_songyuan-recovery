@@ -1,8 +1,3 @@
-# POCO F9 Ultra songyuan ID305 RECOVERY fstab from native vendor/etc/fstab.qcom.
-# Intentional recovery differences: EROFS-only read-only logical partitions,
-# no Xiaomi product overlay mounts; no stock first-stage public AVB key list.
-# Exact OEM metadata/data F2FS crypto flags preserved, no automatic formatting.
-# <src> <mount> <fs> <mount-options> <fs_mgr>
 system /system erofs ro wait,slotselect,logical,first_stage_mount
 system_ext /system_ext erofs ro wait,slotselect,logical,first_stage_mount
 product /product erofs ro wait,slotselect,logical,first_stage_mount

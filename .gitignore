@@ -1,10 +1,11 @@
-# Native POCO F9 Ultra device tree; verified ID305 prebuilts must be tracked.
-# Do not ignore: prebuilt/kernel, prebuilt/vendor, prebuilt/odm, prebuilt/vendor_dlkm.
 out/
 out-*/
 .repo/
+*.img
+*.elf
+*.zip
+*.tar.gz
 *.log
 *.trace
-*.tar.gz
-*.zip
-*.elf
+*.o
+*.a

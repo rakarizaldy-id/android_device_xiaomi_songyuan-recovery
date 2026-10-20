@@ -1,4 +1,3 @@
-# Songyuan-only recovery-specific Android make modules.
 LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_DEVICE),songyuan)
   include $(call all-subdir-makefiles,$(LOCAL_PATH))

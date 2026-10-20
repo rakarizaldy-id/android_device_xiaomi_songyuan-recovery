@@ -1,4 +1,3 @@
-# POCO F9 Ultra (songyuan). Device identity from stock ID305 ODM.
 LOCAL_DEVICE_PATH := device/xiaomi/songyuan
 $(call inherit-product, $(LOCAL_DEVICE_PATH)/device.mk)
 
