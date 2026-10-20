@@ -31,7 +31,27 @@ SONGYUAN_RECOVERY_FILE_PATHS := \
     vendor/etc/init/hlosminkdaemon.rc \
     vendor/etc/init/qseecomd.rc \
     vendor/etc/init/songyuan-weaver-chain.rc \
-    vendor/etc/vintf/manifest/android.hardware.boot.xml
+    vendor/etc/vintf/manifest/android.hardware.boot.xml \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.b00 \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.b01 \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.b02 \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.b03 \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.b04 \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.b05 \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.b06 \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.b07 \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.b08 \
+    system/bin/twrp_secure_element_ta/32552B22-89FE-42B4-8A45-A0C4E2DB0326.mdt \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b00 \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b01 \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b02 \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b03 \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b04 \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b05 \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b06 \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b07 \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b08 \
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.mdt
 PRODUCT_COPY_FILES += $(foreach rel,$(SONGYUAN_RECOVERY_FILE_PATHS),$(DEVICE_PATH)/recovery/root/$(rel):recovery/root/$(rel))
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/recovery.fstab:recovery/root/system/etc/recovery.fstab \
