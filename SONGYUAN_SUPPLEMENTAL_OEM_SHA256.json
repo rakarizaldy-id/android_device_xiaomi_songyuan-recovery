@@ -1,0 +1,123 @@
+{
+  "device": "songyuan",
+  "source_firmware": "OS3.0.305.0.WGNIDXM",
+  "stock_root": "D:/Downloads/CRB/crb/Projects/OS303050WGNIDXM/ROM",
+  "files": {
+    "vendor/lib64/libGPreqcancel.so": {
+      "bytes": 51640,
+      "sha256": "0d75a3139d1fbd245bfb9d98be035a4fc509a405cd2a738eb61d6ae7ecade0c7"
+    },
+    "vendor/lib64/libdrmtime.so": {
+      "bytes": 35672,
+      "sha256": "aeb0e876ae3c09675a868937640acec843faef4d198549f96fb9729f551d9a42"
+    },
+    "vendor/lib64/libgpt.so": {
+      "bytes": 68200,
+      "sha256": "bbab33b69b0634bf34bd695fad10c3667d63cd340353c6125e91d1afb5fcf91c"
+    },
+    "vendor/lib64/libops.so": {
+      "bytes": 51848,
+      "sha256": "c36430e5f74c0b0b8e5877f5f5342b4d5ad9fede3ea6ad97e69ddbb0c3e6c5c5"
+    },
+    "vendor/lib64/libqisl.so": {
+      "bytes": 52056,
+      "sha256": "2ba09abbbc254daa6cf9e3a43831405d28d94b081f11bed9e70d9e041ee93d7b"
+    },
+    "vendor/lib64/librpmb.so": {
+      "bytes": 86088,
+      "sha256": "8bf2899340db65c4851f5bd9265c790ea5505e9c839c25da835ca4f7eb7d73fc"
+    },
+    "vendor/lib64/libspl.so": {
+      "bytes": 51448,
+      "sha256": "91b39c1df29ad9d936ff1340b03efcefc35e089703e4250bc0fbf785c55dd19e"
+    },
+    "vendor/lib64/libtaautoload.so": {
+      "bytes": 85256,
+      "sha256": "e779017d5ddfacc1558e17de9bb29386ccdef03082bccfa7ed9f9869469ff919"
+    },
+    "vendor/lib64/libGPreqcancel_svc.so": {
+      "bytes": 51744,
+      "sha256": "38a8ed4d1601e773d732e3268cc191d6b6a469d30ccc3421db6620728fdfc06a"
+    },
+    "vendor/lib64/libtime_genoff.so": {
+      "bytes": 51752,
+      "sha256": "2c4c87173dfaadbc9eb6423113e6c6f98252cb259e9082f42621bcadc03dfd71"
+    },
+    "vendor/lib64/libdrm.so": {
+      "bytes": 133816,
+      "sha256": "edd7a8ba5e6090fd4c9ca7ce39ae59a05cc5bf85d496b3fe20ef9c75284d945e"
+    },
+    "vendor/lib64/vendor.qti.hardware.display.config-V7-ndk.so": {
+      "bytes": 184976,
+      "sha256": "1343c8c860cf95a00f28c7305a92e96c9274360a14f87ee817de12d388aac2fa"
+    },
+    "vendor/lib64/android.hardware.common-V2-ndk.so": {
+      "bytes": 52280,
+      "sha256": "ce9960a22b3d2256b68aad27535f261e60232417c26d3f66a50e7f5f10934664"
+    },
+    "vendor/etc/gpfspath_oem_config.xml": {
+      "bytes": 2129,
+      "sha256": "f33b193963bbbee24df9de611384139959aa3080f956b6e908abab4cee616f07"
+    },
+    "odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service": {
+      "bytes": 269232,
+      "sha256": "f252505f2e449352782caf9321de88ccd9dae084b1409247726085d3268be49b"
+    },
+    "vendor/etc/HapticsPolicy.xml": {
+      "bytes": 3975,
+      "sha256": "45be7db06467a3eae8823eb189571fa1e9a4fa20d06eec47db7a8e265d1c5e33"
+    },
+    "vendor/etc/Hapticsconfig.xml": {
+      "bytes": 21375,
+      "sha256": "27be444399dddad40cea831245026cc8018fe696d92f0742b8d905de205fca2a"
+    },
+    "vendor/lib64/android.frameworks.sensorservice@1.0.so": {
+      "bytes": 252608,
+      "sha256": "9bc098386a12c5364009b11bd2b88f87c4a8989376c09864b97cdfb1f17e202d"
+    },
+    "vendor/lib64/android.hardware.common.fmq-V1-ndk.so": {
+      "bytes": 51776,
+      "sha256": "ad0423429289312d2ed6b095d0aade011ec1e76f438350351f1bda55d998e581"
+    },
+    "vendor/lib64/android.hardware.sensors@1.0.so": {
+      "bytes": 153328,
+      "sha256": "813148dfb87b463cfb8182826df43eecae13bb2607781c0d97aefb51c6e10099"
+    },
+    "vendor/lib64/android.hardware.sensors@2.0.so": {
+      "bytes": 219896,
+      "sha256": "155a44cd121c1a47ba06ca76d804e9b506145c5effc6b8b98af38ad10b9af52c"
+    },
+    "vendor/lib64/android.hardware.vibrator-V2-ndk.so": {
+      "bytes": 152152,
+      "sha256": "02c88a4fd2b918fc995646b23825d1e052982d71ba8076d231ecafb1d3f19b39"
+    },
+    "vendor/lib64/libfmq.so": {
+      "bytes": 51768,
+      "sha256": "8ab60ba3c0da2048d0e000757b342e4f59d73c25d8d901533b5f8326c9b6cf07"
+    },
+    "vendor/lib64/libpalclient.so": {
+      "bytes": 170384,
+      "sha256": "694e934b88b4dbd7fb1ed7683d96bc47934031b4a0fe4b065cc5d7f2802c6fe7"
+    },
+    "vendor/lib64/libsoc_helper.so": {
+      "bytes": 35464,
+      "sha256": "2abaa3ac55d815fdc0a2b7e2db27b8f2c00cd32b77d86537d0aceb2bb3bc384b"
+    },
+    "vendor/lib64/libtinyalsa.so": {
+      "bytes": 68600,
+      "sha256": "03c80456e5417c52bad895fdfbdb8efeba9b38f8472277d03358165bf848dbc6"
+    },
+    "odm/lib64/vendor.hardware.vibratorCL.impl.so": {
+      "bytes": 134832,
+      "sha256": "667dc415147559c0d14dd2667221e505342b719deeb9b36d0e0aed8ff17e3655"
+    },
+    "vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk.so": {
+      "bytes": 68968,
+      "sha256": "294c7a11594943bcfcf4b21e7cdebfb87ae1f0ba031ed22b6e71bda5d9f00831"
+    },
+    "vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so": {
+      "bytes": 186256,
+      "sha256": "b60a5d2e12a8d1bac0fdddbeed95ad690b42911043b58d6e9e33779baa3f87e8"
+    }
+  }
+}

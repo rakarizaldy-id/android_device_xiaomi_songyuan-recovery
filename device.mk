@@ -51,7 +51,38 @@ SONGYUAN_RECOVERY_FILE_PATHS := \
     system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b06 \
     system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b07 \
     system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.b08 \
-    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.mdt
+    system/bin/twrp_secure_element_ta/FD719D50-FFFB-11EB-9A03-0242AC130003.mdt \
+    vendor/lib64/libGPreqcancel.so \
+    vendor/lib64/libdrmtime.so \
+    vendor/lib64/libgpt.so \
+    vendor/lib64/libops.so \
+    vendor/lib64/libqisl.so \
+    vendor/lib64/librpmb.so \
+    vendor/lib64/libspl.so \
+    vendor/lib64/libtaautoload.so \
+    vendor/lib64/libGPreqcancel_svc.so \
+    vendor/lib64/libtime_genoff.so \
+    vendor/lib64/libdrm.so \
+    vendor/lib64/vendor.qti.hardware.display.config-V7-ndk.so \
+    vendor/lib64/android.hardware.common-V2-ndk.so \
+    vendor/etc/gpfspath_oem_config.xml \
+    odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service \
+    vendor/etc/HapticsPolicy.xml \
+    vendor/etc/Hapticsconfig.xml \
+    vendor/lib64/android.frameworks.sensorservice@1.0.so \
+    vendor/lib64/android.hardware.common.fmq-V1-ndk.so \
+    vendor/lib64/android.hardware.sensors@1.0.so \
+    vendor/lib64/android.hardware.sensors@2.0.so \
+    vendor/lib64/android.hardware.vibrator-V2-ndk.so \
+    vendor/lib64/libfmq.so \
+    vendor/lib64/libpalclient.so \
+    vendor/lib64/libsoc_helper.so \
+    vendor/lib64/libtinyalsa.so \
+    odm/lib64/vendor.hardware.vibratorCL.impl.so \
+    vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk.so \
+    vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so \
+    vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc \
+    vendor/etc/vintf/manifest/android.hardware.vibrator-service.xml
 PRODUCT_COPY_FILES += $(foreach rel,$(SONGYUAN_RECOVERY_FILE_PATHS),$(DEVICE_PATH)/recovery/root/$(rel):recovery/root/$(rel))
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/recovery.fstab:recovery/root/system/etc/recovery.fstab \
