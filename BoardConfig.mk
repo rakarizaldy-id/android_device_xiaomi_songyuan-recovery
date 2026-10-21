@@ -98,6 +98,10 @@ TW_INCLUDE_FASTBOOTD := true
 TW_USE_DMCTL := true
 TW_USE_TOOLBOX := true
 TW_INCLUDE_WIFI := false
+# Songyuan has its own configfs USB init, as in Ekin's device layout.
+# TWRP16 already provides a switch to avoid installing its legacy
+# android_usb fallback at the exact same recovery root filename.
+TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_DEFAULT_LANGUAGE := en
 TARGET_RECOVERY_QCOM_RTC_FIX := true
