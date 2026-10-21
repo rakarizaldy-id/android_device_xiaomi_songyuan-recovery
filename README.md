@@ -1,14 +1,46 @@
-# POCO F9 Ultra (songyuan) — TWRP 16
+<div align="center">
 
-**Device:** POCO F9 Ultra (`songyuan`) · Android 16 · Indonesia `OS3.0.305.0.WGNIDXM`.
+# Team Win Recovery Project · POCO F9 Ultra (songyuan)
 
-## Satu keberhasilan terverifikasi
-**PASS — audit source dan graph Soong + Make/Kati.** Device tree pada commit `ee0530fb30648a9a1c7b6f569d92ceb72b4d43b1` berhasil melewati staging dan pemeriksaan graph instalasi tanpa konflik dalam [GitHub Actions #39635740480](https://github.com/rakarizaldy-id/Action-TWRP-Builder/actions/runs/39635740480) (`graph_only=true`). **Ini bukan keberhasilan kompilasi ELF maupun pengujian boot/recovery.**
+<br>
 
-## Batas yang tetap berlaku
-- Firmware, kernel, modul, USB configfs, fstab, layanan, dan library hardware harus berasal dari **Songyuan asli**. Referensi implementasi lain hanya untuk logika; **tidak ada donor binary**.
-- Wi-Fi recovery **dikecualikan**. File OEM arsip dan metadata provenance/hash dipertahankan demi integritas serta verifikasi source; keberadaannya **tidak** berarti semuanya dimuat oleh recovery.
-- Android compile hanya melalui [builder branch `songyuan`](https://github.com/rakarizaldy-id/Action-TWRP-Builder/tree/songyuan). GitHub hanya boleh merilis ELF AArch64, recovery-root archive dan SHA256; **tidak membuat `recovery.img`, CPIO/image atau Actions artifact**.
-- Pengemasan image dilakukan terpisah; hanya pengguna yang melakukan flashing dan pengujian di perangkat.
+![Device](https://img.shields.io/badge/Device-POCO_F9_Ultra-dc2626?style=for-the-badge&logo=xiaomi&logoColor=white)
+![SoC](https://img.shields.io/badge/SoC-Qualcomm_SM8850-f97316?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-canoe-0891b2?style=for-the-badge)
+![TWRP](https://img.shields.io/badge/TWRP-16-2563eb?style=for-the-badge)
 
-**Langkah berikutnya:** setelah DT dan builder dibersihkan berurutan serta HEAD diverifikasi, jalankan satu full compile dengan `graph_only=false`. Instruksi kerja aktif berada di [MASTER_HANDOFF](https://github.com/rakarizaldy-id/MASTER_HANDOFF), bukan di riwayat commit.
+![Firmware](https://img.shields.io/badge/Firmware-OS3.0.305.0.WGNIDXM-2563eb?style=flat-square)
+![Android](https://img.shields.io/badge/Android-16-3ddc84?style=flat-square&logo=android&logoColor=white)
+![Boot Header](https://img.shields.io/badge/Boot_Header-v4-7c3aed?style=flat-square)
+![Status](https://img.shields.io/badge/Status-In_Development-eab308?style=flat-square)
+
+</div>
+
+## Device information
+
+| Specification | Value |
+| --- | --- |
+| Device | POCO F9 Ultra |
+| Codename | `songyuan` |
+| SoC | Qualcomm SM8850 |
+| Platform | `canoe` |
+| Architecture | ARM64 |
+| Display | 1200 × 2608 |
+| Partition scheme | Dynamic partitions / Virtual A/B |
+| Recovery boot header | v4 |
+| Data filesystem | F2FS |
+| Stock OS | Xiaomi HyperOS |
+| Firmware base | `OS3.0.305.0.WGNIDXM` (Indonesia, Android 16) |
+
+## Status
+
+TWRP 16 device tree under development. Recovery boot, touchscreen, and data decryption have not yet been verified on-device.
+
+## Credits
+
+- [Team Win Recovery Project](https://github.com/TeamWin)
+- [Android Open Source Project](https://source.android.com/)
+
+## Disclaimer
+
+This is an unofficial device tree. Verify device and firmware compatibility before using any recovery build.
