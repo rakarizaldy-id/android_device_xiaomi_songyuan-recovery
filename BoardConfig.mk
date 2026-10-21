@@ -98,10 +98,10 @@ TW_INCLUDE_FASTBOOTD := true
 TW_USE_DMCTL := true
 TW_USE_TOOLBOX := true
 TW_INCLUDE_WIFI := false
-# Songyuan has its own configfs USB init, as in Ekin's device layout.
-# TWRP16 already provides a switch to avoid installing its legacy
-# android_usb fallback at the exact same recovery root filename.
-TW_EXCLUDE_DEFAULT_USB_INIT := true
+# TWRP Soong is the ONLY USB init installer. Stage replaces its generic
+# source file with original Songyuan configfs data (never a donor).
+# Explicit false keeps the recovery module's required dependency enabled.
+TW_EXCLUDE_DEFAULT_USB_INIT := false
 TW_INCLUDE_REPACKTOOLS := true
 TW_DEFAULT_LANGUAGE := en
 TARGET_RECOVERY_QCOM_RTC_FIX := true
