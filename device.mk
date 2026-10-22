@@ -16,6 +16,7 @@ PRODUCT_PACKAGES += \
 
 SONGYUAN_RECOVERY_FILE_PATHS := \
     init.recovery.qcom.rc \
+    init.recovery.mksh.rc \
     odm/bin/prepdecrypt.sh \
     odm/etc/init/android.hardware.weaver-service.thales.rc \
     odm/etc/init/prepdecrypt.rc \
