@@ -1,4 +1,3 @@
-# Ekin's QSEECom -> firmware -> Mink -> Weaver chain with native Songyuan HALs.
 on property:init.svc.vendor.qseecomd=running
     start recovery.songyuan-security-setup
 

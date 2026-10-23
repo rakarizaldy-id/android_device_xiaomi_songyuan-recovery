@@ -1,4 +1,3 @@
-# Ekin TWRP16 recovery init lifecycle, adapted to original Songyuan paths.
 on init
     setprop sys.usb.configfs 1
     setprop prepdecrypt.setpatch true
@@ -9,7 +8,6 @@ on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=tru
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
 
-# AIDL BootControl is provided by native TWRP android.hardware.boot-service.default_recovery.
 on property:servicemanager.ready=true
     start vendor.boot-default
 
@@ -21,7 +19,6 @@ on fs
     mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
     symlink /persist /mnt/vendor/persist
 
-# Songyuan's FocalTech touch requires genuine ID305 modules and firmware.
 on property:twrp.modules.loaded=true && property:init.svc.adbd=running
     start songyuan-touch-init
 

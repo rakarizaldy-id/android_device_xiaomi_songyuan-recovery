@@ -1,4 +1,3 @@
-# Match Ekin's QSEECom on-init startup using original Songyuan ID305 binary.
 on init
     start vendor.qseecomd
 

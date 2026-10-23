@@ -1,5 +1,3 @@
-# Native POCO F9 Ultra / songyuan HyperOS OS3.0.305.0.WGNIDXM fstab.
-# OEM mount topology retained with verification flags removed.
 system /system ext4 ro,barrier=1,discard wait,slotselect,logical,first_stage_mount
 system /system erofs ro wait,slotselect,logical,first_stage_mount
 system_ext /system_ext ext4 ro,barrier=1,discard wait,slotselect,logical,first_stage_mount
@@ -14,7 +12,6 @@ vendor /vendor ext4 ro,barrier=1,discard wait,slotselect,logical,first_stage_mou
 vendor /vendor erofs ro wait,slotselect,logical,first_stage_mount
 odm /odm ext4 ro,barrier=1,discard wait,slotselect,logical,first_stage_mount
 odm /odm erofs ro wait,slotselect,logical,first_stage_mount
-# Optional recovery mounts only; original partitions above unchanged.
 vendor_dlkm /vendor_dlkm erofs ro wait,slotselect,logical,first_stage_mount,nofail
 system_dlkm /system_dlkm erofs ro wait,slotselect,logical,first_stage_mount,nofail
 /dev/block/bootdevice/by-name/metadata /metadata f2fs noatime,nosuid,nodev,discard wait,check,formattable,wrappedkey,first_stage_mount

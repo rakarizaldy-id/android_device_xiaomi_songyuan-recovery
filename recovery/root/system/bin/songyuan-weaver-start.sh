@@ -1,5 +1,4 @@
 #!/system/bin/sh
-# Ekin's eSE -> OMAPI -> Weaver -> prepdecrypt order, using Songyuan MIAuthSecret.
 timeout=20
 while [ ! -e /dev/st54spi_gpio ] && [ "$timeout" -gt 0 ]; do
     sleep 1

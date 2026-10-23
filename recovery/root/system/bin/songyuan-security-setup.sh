@@ -1,5 +1,4 @@
 #!/system/bin/sh
-# Ekin's modem -> firmware overlay -> Mink chain using Songyuan OEM ID305 assets.
 slot="$(getprop ro.boot.slot_suffix)"
 for attempt in 1 2 3 4 5 6 7 8 9 10; do
     if [ -e "/dev/block/by-name/modem${slot}" ]; then

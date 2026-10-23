@@ -20,7 +20,6 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-# Ekin's recovery SELinux boot configuration (no Nezha sepolicy binaries).
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_USES_RECOVERY_AS_BOOT := false
 TARGET_KERNEL_ARCH := arm64
@@ -33,8 +32,6 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 
 AB_OTA_UPDATER := true
-# Recovery-image AVB packaging follows Ekin independently of fstab mount flags.
-# The native Songyuan fstab remains free of AVB and verity flags.
 BOARD_AVB_ENABLE := true
 BOARD_USES_METADATA_PARTITION := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
@@ -102,9 +99,6 @@ TW_INCLUDE_FASTBOOTD := true
 TW_USE_DMCTL := true
 TW_USE_TOOLBOX := true
 TW_INCLUDE_WIFI := false
-# TWRP Soong is the ONLY USB init installer. Stage replaces its generic
-# source file with original Songyuan configfs data (never a donor).
-# Explicit false keeps the recovery module's required dependency enabled.
 TW_EXCLUDE_DEFAULT_USB_INIT := false
 TW_INCLUDE_REPACKTOOLS := true
 TW_DEFAULT_LANGUAGE := en

@@ -84,8 +84,6 @@ SONGYUAN_RECOVERY_FILE_PATHS := \
     vendor/etc/vintf/manifest/android.hardware.vibrator-service.xml
 PRODUCT_COPY_FILES += $(foreach rel,$(SONGYUAN_RECOVERY_FILE_PATHS),$(DEVICE_PATH)/recovery/root/$(rel):recovery/root/$(rel))
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/twrp.flags:recovery/root/system/etc/twrp.flags
-# recovery.fstab is installed exactly once by build/make/core/Makefile
-# from TARGET_RECOVERY_FSTAB during recovery ramdisk preparation.
 
 ifeq ($(wildcard $(DEVICE_PATH)/prebuilt/curated-manifest.json),)
 $(error Native Songyuan ID305 prebuilt manifest missing)
