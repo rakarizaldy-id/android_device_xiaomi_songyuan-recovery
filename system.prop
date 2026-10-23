@@ -5,3 +5,7 @@ ro.product.model=POCO F9 Ultra
 ro.product.manufacturer=Xiaomi
 ro.board.platform=canoe
 ro.sf.lcd_density=480
+
+# Ekin's dynamic-partition trigger is also required by the recovery crypto timeout.
+# Native Songyuan uses PRODUCT_USE_DYNAMIC_PARTITIONS := true.
+ro.boot.dynamic_partitions=true
