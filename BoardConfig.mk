@@ -20,6 +20,8 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
+# Ekin's recovery SELinux boot configuration (no Nezha sepolicy binaries).
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_USES_RECOVERY_AS_BOOT := false
 TARGET_KERNEL_ARCH := arm64
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
@@ -31,7 +33,9 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 
 AB_OTA_UPDATER := true
-BOARD_AVB_ENABLE := false
+# Recovery-image AVB packaging follows Ekin independently of fstab mount flags.
+# The native Songyuan fstab remains free of AVB and verity flags.
+BOARD_AVB_ENABLE := true
 BOARD_USES_METADATA_PARTITION := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 TARGET_USERIMAGES_USE_F2FS := true

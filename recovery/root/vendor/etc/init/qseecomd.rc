@@ -1,6 +1,9 @@
+# Match Ekin's QSEECom on-init startup using original Songyuan ID305 binary.
+on init
+    start vendor.qseecomd
+
 service vendor.qseecomd /vendor/bin/qseecomd
     class core
-    disabled
     user root
     group root drmrpc
     socket notify-topology stream 0660 system drmrpc

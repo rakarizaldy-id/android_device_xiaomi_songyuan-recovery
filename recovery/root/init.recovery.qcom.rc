@@ -1,33 +1,29 @@
+# Ekin TWRP16 recovery init lifecycle, adapted to original Songyuan paths.
 on init
     setprop sys.usb.configfs 1
     setprop prepdecrypt.setpatch true
 
+on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=true
+    start recovery.songyuan-crypto-timeout
+
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
+
+# AIDL BootControl is provided by native TWRP android.hardware.boot-service.default_recovery.
+on property:servicemanager.ready=true
+    start vendor.boot-default
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    wait /dev/block/bootdevice/by-name/ssd 10
-    mkdir /vendor/firmware_mnt 0755 root root
-    mkdir /vendor/modem_firmware 0755 root root
-    mkdir /vendor/dsp 0755 root root
-    wait /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} 10
-    mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /vendor/firmware_mnt ro
-    wait /dev/block/bootdevice/by-name/modemfirmware${ro.boot.slot_suffix} 10
-    mount vfat /dev/block/bootdevice/by-name/modemfirmware${ro.boot.slot_suffix} /vendor/modem_firmware ro
-    wait /dev/block/bootdevice/by-name/dsp${ro.boot.slot_suffix} 10
-    mount ext4 /dev/block/bootdevice/by-name/dsp${ro.boot.slot_suffix} /vendor/dsp ro nosuid nodev
-    start vendor.qseecomd
+    mkdir /mnt/vendor 0775 shell system
+    mkdir /persist 0771 root system
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+    symlink /persist /mnt/vendor/persist
 
-on boot
-    setprop sys.usb.config adb
-
+# Songyuan's FocalTech touch requires genuine ID305 modules and firmware.
 on property:twrp.modules.loaded=true && property:init.svc.adbd=running
     start songyuan-touch-init
-
-on property:init.svc.vendor.qseecomd=running
-    start recovery.songyuan-security-setup
 
 service songyuan-touch-init /system/bin/sh /system/bin/songyuan-touch-init.sh
     class core
@@ -35,4 +31,11 @@ service songyuan-touch-init /system/bin/sh /system/bin/songyuan-touch-init.sh
     oneshot
     user root
     group root system input
+    seclabel u:r:recovery:s0
+
+service recovery.songyuan-crypto-timeout /system/bin/sh -c "sleep 30; setprop ctl.start odm.prepdecrypt"
+    user root
+    group root
+    disabled
+    oneshot
     seclabel u:r:recovery:s0

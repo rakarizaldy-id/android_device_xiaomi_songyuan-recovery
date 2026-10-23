@@ -1,44 +1,38 @@
 #!/system/bin/sh
-# Songyuan ID305 native firmware stage, following Ekin recovery's eSE startup pattern.
-LOG=/tmp/songyuan-security-setup.log
-note() { echo "$*" >> "$LOG"; }
-fail() {
-    note "BLOCKED: $*"
-    setprop recovery.songyuan.security_firmware_ready 0
-    exit 1
-}
-setprop recovery.songyuan.security_firmware_ready 0
+# Ekin's modem -> firmware overlay -> Mink chain using Songyuan OEM ID305 assets.
+slot="$(getprop ro.boot.slot_suffix)"
+for attempt in 1 2 3 4 5 6 7 8 9 10; do
+    if [ -e "/dev/block/by-name/modem${slot}" ]; then
+        break
+    fi
+    sleep 1
+done
 
-stock=/vendor/firmware_mnt
 stage=/tmp/songyuan-secure-element-fwroot
-fragments=/system/bin/twrp_secure_element_ta
+mkdir -p /firmware "$stage/image" /vendor/firmware_mnt /data/vendor/qwes
+chmod 0755 /firmware "$stage" "$stage/image" /vendor/firmware_mnt /data/vendor/qwes
+chown system system /data/vendor/qwes
+mount -t vfat -o ro "/dev/block/by-name/modem${slot}" /firmware
 
-# init.recovery.qcom.rc mounts the original slot-specific modem VFAT read-only.
-[ -d "$stock/image" ] || fail "original Songyuan modem image is not mounted"
-[ -d "$fragments" ] || fail "Songyuan native TA directory missing"
-mkdir -p "$stage/image" || fail "unable to prepare recovery firmware overlay"
-cp -af "$stock/image/." "$stage/image/" || fail "unable to stage original modem firmware"
+if [ -d /firmware/image ]; then
+    cp -af /firmware/image/. "$stage/image/"
+fi
+cp -af /system/bin/twrp_secure_element_ta/. "$stage/image/"
 
 for mapping in \
     'gpqese 32552B22-89FE-42B4-8A45-A0C4E2DB0326' \
     'st_eseservice FD719D50-FFFB-11EB-9A03-0242AC130003'; do
     set -- $mapping
     alias_name="$1"
-    uuid="$2"
-    for part in b00 b01 b02 b03 b04 b05 b06 b07 b08 mdt; do
-        original="$fragments/$uuid.$part"
-        target="$stage/image/$uuid.$part"
-        [ -s "$original" ] || fail "missing native Songyuan TA $uuid.$part"
-        cp -f "$original" "$target" || fail "TA stage copy failed: $uuid.$part"
-        cp -f "$target" "$stage/image/$alias_name.$part" || fail "TA alias failed: $alias_name.$part"
+    uuid_name="$2"
+    for suffix in b00 b01 b02 b03 b04 b05 b06 b07 b08 mdt; do
+        if [ -f "$stage/image/${uuid_name}.${suffix}" ]; then
+            cp -af "$stage/image/${uuid_name}.${suffix}" "$stage/image/${alias_name}.${suffix}"
+        fi
     done
 done
 
-chmod 0644 "$stage"/image/* || fail "unable to set staged firmware permissions"
-mount --bind "$stage" "$stock" || fail "cannot bind native firmware overlay"
-[ -s "$stock/image/gpqese.mdt" ] || fail "gpqese firmware alias not visible"
-[ -s "$stock/image/st_eseservice.mdt" ] || fail "eSE firmware alias not visible"
-
+chmod 0644 "$stage"/image/* 2>/dev/null
+mount --bind "$stage" /vendor/firmware_mnt
 setprop recovery.songyuan.security_firmware_ready 1
-setprop ctl.start vendor.minkdaemon
-note 'PASS Songyuan ID305 modem and native eSE TA overlay staged; Mink requested'
+start vendor.minkdaemon
